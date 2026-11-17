@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cyber Tracker plots newly reported cyberattacks on a live 3D globe: ransomware, data breaches and intrusions, confirmed and claimed.">
+<title>Cyber Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Saira+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: the globe fills the whole screen. A slim bar on top holds the name, live status and a
+   four-button menu; each button opens one panel (right drawer on desktop, bottom sheet on phones).
+   A single card bottom-left shows the latest or the selected incident. */
+:root {
+  color-scheme: dark;
+  --bg: #050814;
+  --glass: rgba(13, 20, 42, .82);
+  --panel-2: #1a2547;
+  --line: #2a3866;
+  --ink: #eaf0ff;
+  --muted: #93a0c8;
+  --accent: #ffb020;
+  --f-display: "Saira Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15px; line-height: 1.45;
+  overflow: hidden; -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; color: inherit; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+#globe { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+#globe.drag { cursor: grabbing; }
+
+.glass { background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+
+.bar {
+  position: fixed; top: 12px; left: 16px; right: 16px; z-index: 5;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  border-radius: 12px; padding: 8px 10px 8px 16px;
+}
+.brand { font-family: var(--f-display); font-weight: 700; font-size: 24px; line-height: 1; letter-spacing: .04em; text-transform: uppercase; margin: 0; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.status { display: flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); min-width: 0; }
+.status .lamp { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.status.live .lamp { background: #5fe08c; box-shadow: 0 0 0 4px rgba(95,224,140,.18); }
+.status.warn .lamp { background: var(--accent); }
+.menu { margin-left: auto; display: flex; gap: 4px; }
+.menu button {
+  background: transparent; border: 1px solid transparent; border-radius: 8px;
+  padding: 6px 12px; font-size: 14px; font-weight: 500; cursor: pointer; color: var(--muted); white-space: nowrap;
+}
+.menu button:hover { color: var(--ink); background: rgba(255,255,255,.05); }
+.menu button[aria-expanded="true"] { color: var(--ink); background: var(--panel-2); border-color: var(--line); }
+.menu .n { font-family: var(--f-mono); font-size: 12px; color: var(--accent); margin-left: 5px; }
+
+.panel {
+  position: fixed; z-index: 4; top: 76px; right: 16px; bottom: 16px; width: 390px;
+  border-radius: 12px; display: flex; flex-direction: column; min-height: 0;
+}
+.panel > header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 12px 14px 10px 16px; border-bottom: 1px solid var(--line); }
+.panel h2 { font-family: var(--f-display); font-weight: 600; font-size: 20px; letter-spacing: .05em; text-transform: uppercase; margin: 0; }
+.panel h2 small { font-family: var(--f-mono); font-weight: 400; font-size: 12px; color: var(--muted); letter-spacing: 0; text-transform: none; margin-left: 8px; }
+.x { background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 2px 9px; cursor: pointer; color: var(--muted); font-size: 13px; }
+.x:hover { color: var(--ink); }
+.body { overflow-y: auto; min-height: 0; flex: 1; }
+.pad { padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; }
+.pad h3 { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin: 0 0 8px; }
+.pad p { margin: 0; color: #cdd5ee; max-width: 62ch; }
+
+#feed { list-style: none; margin: 0; padding: 0; }
+.item { display: block; width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-left: 3px solid transparent; padding: 11px 14px 11px 13px; cursor: pointer; }
+.item:hover { background: rgba(255,255,255,.04); }
+.item[aria-current="true"] { background: var(--panel-2); border-left-color: var(--c); }
+.when { font-family: var(--f-mono); font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.item .title { display: block; font-weight: 500; margin: 4px 0 5px; overflow-wrap: anywhere; }
+.where { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; font-size: 13px; color: var(--muted); }
+.empty { padding: 22px 16px; color: var(--muted); }
+
+.tag { display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; padding: 2px 8px; border-radius: 4px; color: var(--c); background: color-mix(in srgb, var(--c) 15%, transparent); white-space: nowrap; }
+.tag.st { color: var(--ink); background: var(--panel-2); border: 1px solid var(--line); }
+.tag.st.on { color: #ffd9dd; background: rgba(255,77,94,.22); border-color: rgba(255,77,94,.6); }
+.tag.st.ok { color: #c4f7d6; background: rgba(95,224,140,.15); border-color: rgba(95,224,140,.55); }
+.tag.st.cl { color: var(--muted); background: transparent; border-style: dashed; }
+.tag.new { color: #0b1020; background: var(--accent); font-weight: 600; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 7px; background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px 5px 9px; font-size: 13px; cursor: pointer; }
+.chip i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none; }
+.chip .n { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.chip[aria-pressed="false"] { color: var(--muted); border-style: dashed; }
+.chip[aria-pressed="false"] i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--c); }
+.chip:hover { background: rgba(255,255,255,.05); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; align-self: flex-start; }
+.seg button { background: transparent; border: 0; border-left: 1px solid var(--line); padding: 6px 13px; font-size: 13px; color: var(--muted); cursor: pointer; }
+.seg button:first-child { border-left: 0; }
+.seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); }
+
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.tile { border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; }
+.tile dt { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.tile dd { margin: 2px 0 0; font-family: var(--f-display); font-weight: 600; font-size: 30px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.bars li { display: grid; grid-template-columns: 118px minmax(0, 1fr) 26px; align-items: center; gap: 10px; font-size: 13.5px; }
+.bars .track { height: 8px; border-radius: 4px; background: rgba(255,255,255,.06); overflow: hidden; }
+.bars .fill { display: block; height: 100%; border-radius: 4px; background: var(--c, #6f86c9); }
+.bars .v { font-family: var(--f-mono); font-size: 12.5px; text-align: right; color: var(--muted); }
+.bars .lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.card { position: fixed; z-index: 3; left: 16px; bottom: 16px; width: min(460px, calc(100% - 32px)); border-radius: 12px; border-left: 4px solid var(--c, var(--line)); padding: 12px 14px; display: flex; flex-direction: column; gap: 7px; }
+.card .row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.card .eyebrow { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .1em; color: var(--accent); }
+.card .meta { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); }
+.card h2 { font-family: var(--f-body); font-weight: 600; font-size: 16.5px; line-height: 1.3; margin: 0; text-wrap: balance; }
+.card p { margin: 0; color: #cdd5ee; font-size: 14.5px; }
+.card .x { margin-left: auto; }
+.card .open { background: var(--panel-2); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; font-size: 13px; cursor: pointer; margin-left: auto; }
+.card .open:hover { border-color: var(--accent); }
+
+.zoom { position: fixed; z-index: 3; left: 16px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; border-radius: 10px; overflow: hidden; }
+.zoom button { background: transparent; border: 0; border-top: 1px solid var(--line); width: 38px; height: 38px; font-size: 19px; line-height: 1; cursor: pointer; color: var(--ink); }
+.zoom button:first-child { border-top: 0; }
+.zoom button:hover { background: rgba(255,255,255,.07); }
+
+.tip { position: fixed; z-index: 6; pointer-events: none; transform: translate(-50%, -150%); background: #050814; border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; font-size: 12.5px; white-space: nowrap; max-width: 70vw; overflow: hidden; text-overflow: ellipsis; }
+.hint { position: fixed; z-index: 2; right: 16px; bottom: 16px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); pointer-events: none; display: flex; gap: 16px; align-items: center; }
+.hint b { font-weight: 400; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.hint i { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--ink); }
+.hint i.o { background: transparent; box-shadow: inset 0 0 0 1.5px var(--muted); }
+body.panel-open .hint { display: none; }
+
+@media (max-width: 860px) {
+  .bar { top: 8px; left: 8px; right: 8px; padding: 8px 8px 6px 12px; gap: 6px 12px; }
+  .brand { font-size: 21px; }
+  .status { font-size: 11.5px; }
+  .menu { margin-left: 0; width: 100%; }
+  .menu button { flex: 1; padding: 6px 4px; font-size: 13.5px; }
+  .panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; height: 58%; }
+  .card { left: 8px; bottom: 8px; width: calc(100% - 16px); }
+  body.panel-open .card { display: none; }
+  .zoom { left: 8px; top: 132px; transform: none; }
+  .hint { display: none; }
+}
+</style>
+</head>
+<body>
+<canvas id="globe" tabindex="0" aria-label="Rotating globe with a marker for each reported cyberattack. Drag or use the arrow keys to spin, scroll or press plus and minus to zoom. The same incidents are listed under Feed."></canvas>
+
+<header class="bar glass">
+  <h1 class="brand">Cyber <span>Tracker</span></h1>
+  <div class="status" id="status" role="status"><span class="lamp"></span><span id="statusText">Connecting …</span></div>
+  <nav class="menu" aria-label="Panels">
+    <button type="button" data-p="feed" aria-expanded="false" aria-controls="panel">Feed<span class="n" id="navCount"></span></button>
+    <button type="button" data-p="filters" aria-expanded="false" aria-controls="panel">Filters</button>
+    <button type="button" data-p="stats" aria-expanded="false" aria-controls="panel">Stats</button>
+    <button type="button" data-p="about" aria-expanded="false" aria-controls="panel">About</button>
+  </nav>
+</header>
+
+<div class="zoom glass" role="group" aria-label="Zoom">
+  <button type="button" id="zIn" aria-label="Zoom in">+</button>
+  <button type="button" id="zOut" aria-label="Zoom out">−</button>
+  <button type="button" id="zReset" aria-label="Reset view">⟲</button>
+</div>
+
+<aside class="panel glass" id="panel" hidden aria-labelledby="panelTitle">
+  <header><h2 id="panelTitle"></h2><button type="button" class="x" id="panelClose">Close</button></header>
+  <div class="body">
+    <ol id="feed" data-sec="feed"></ol>
+
+    <div class="pad" data-sec="filters">
+      <div><h3>Attack type</h3><div class="chips" id="chips" role="group" aria-label="Attack types shown"></div></div>
+      <div><h3>Status</h3>
+        <div class="seg" id="statusSeg" role="group" aria-label="Status">
+          <button type="button" data-s="all" aria-pressed="true">All reports</button>
+          <button type="button" data-s="confirmed" aria-pressed="false">Confirmed only</button>
+        </div>
+      </div>
+      <div><h3>Time range</h3>
+        <div class="seg" id="range" role="group" aria-label="Time range">
+          <button type="button" data-r="24" aria-pressed="false">24 hours</button>
+          <button type="button" data-r="168" aria-pressed="false">7 days</button>
+          <button type="button" data-r="0" aria-pressed="true">All</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pad" data-sec="stats">
+      <dl class="tiles">
+        <div class="tile"><dt>Last 24 h</dt><dd id="s24">–</dd></div>
+        <div class="tile"><dt>Last 7 days</dt><dd id="s7">–</dd></div>
+        <div class="tile"><dt>Countries</dt><dd id="sLand">–</dd></div>
+      </dl>
+      <div><h3>By status</h3><ul class="bars" id="barsStatus"></ul></div>
+      <div><h3>By attack type</h3><ul class="bars" id="barsType"></ul></div>
+      <div><h3>Most affected countries</h3><ul class="bars" id="barsLand"></ul></div>
+    </div>
+
+    <div class="pad" data-sec="about">
+      <p>Cyber Tracker plots newly reported cyberattacks on the globe. Each marker stands where the affected organisation is based, not where the attacker is.</p>
+      <p>Everything that gets reported shows up. A solid marker with a white ring and a beam is Confirmed: the organisation itself or a news desk has confirmed the attack. A small hollow ring is Claimed: an attacker listed the victim on a leak site and nobody has verified it yet. Every incident links to where it was reported.</p>
+      <p>Markers with a moving ring were reported in the last three days. New incidents appear on the globe while the page is open.</p>
+      <div><h3>Controls</h3><p>Drag to spin. Scroll or pinch to zoom. Arrow keys and + / − work when the globe has focus. Select a marker or a feed entry to fly to it.</p></div>
+    </div>
+  </div>
+</aside>
+
+<section class="card glass" id="card" hidden aria-live="polite">
+  <div class="row">
+    <span class="eyebrow" id="cEyebrow">LATEST</span>
+    <span class="tag" id="cType"></span>
+    <span class="tag st" id="cStatus"></span>
+    <button type="button" class="open" id="cOpen">Details</button>
+    <button type="button" class="x" id="cClose">Close</button>
+  </div>
+  <h2 id="cTitle"></h2>
+  <div class="meta" id="cMeta"></div>
+  <p id="cSummary"></p>
+  <div class="meta" id="cSource"></div>
+</section>
+
+<div class="tip" id="tip" hidden></div>
+<div class="hint" id="hint"><b><i></i>Confirmed</b><b><i class="o"></i>Claimed, unverified</b><span>Drag to spin · scroll to zoom</span></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var TYPES = {
+    ransomware: { label: "Ransomware",   color: "#ff4d5e" },
+    breach:     { label: "Data breach",  color: "#ffb020" },
+    supply:     { label: "Supply chain", color: "#c98bff" },
+    intrusion:  { label: "Intrusion",    color: "#3cc8f5" },
+    ddos:       { label: "DDoS",         color: "#5fe08c" },
+    other:      { label: "Other",        color: "#a3aed0" }
+  };
+  var STATUS = { confirmed: "✓ Confirmed", ongoing: "Ongoing", claimed: "Claimed" };
+  var STCLS = { confirmed: " ok", ongoing: " on", claimed: " cl" };
+  var onlyConfirmed = false;
+  var PANELS = { feed: "Latest incidents", filters: "Filters", stats: "Stats", about: "About" };
+
+  // ---------- simplified coastlines (lon/lat) ----------
+  var LAND = [
+    [[-168,66],[-162,70],[-156,71],[-141,70],[-128,70],[-115,68],[-108,68],[-95,69],[-88,68],[-82,67],[-86,64],[-94,61],[-93,58],[-85,55],[-82,52],[-79,51],[-79,55],[-77,60],[-78,62],[-73,62],[-65,60],[-61,56],[-56,52],[-60,50],[-66,50],[-70,47],[-65,48],[-64,46],[-60,46],[-66,44],[-70,43],[-71,41],[-74,40],[-76,37],[-76,35],[-81,31],[-80,26],[-81,25],[-83,29],[-85,30],[-90,29],[-94,29],[-97,27],[-98,22],[-96,19],[-94,18],[-91,19],[-90,21],[-87,21],[-88,16],[-84,15],[-83,11],[-80,9],[-77,8],[-78,7],[-81,8],[-85,10],[-88,13],[-92,14],[-96,16],[-102,18],[-105,20],[-106,23],[-110,27],[-113,31],[-115,31],[-112,27],[-110,23],[-112,25],[-115,29],[-117,33],[-121,35],[-124,40],[-124,47],[-128,51],[-131,55],[-136,58],[-141,60],[-148,60],[-152,58],[-158,56],[-164,55],[-158,59],[-163,60],[-166,62],[-161,64],[-166,65]],
+    [[-73,78],[-60,82],[-35,83],[-20,81],[-19,75],[-23,70],[-32,68],[-40,65],[-43,60],[-48,61],[-52,65],[-54,70],[-60,76]],
+    [[-80,73],[-72,72],[-62,67],[-65,62],[-70,63],[-78,65],[-75,68],[-85,70],[-88,73]],
+    [[-120,74],[-105,73],[-100,70],[-115,69],[-125,72]],
+    [[-90,77],[-80,76],[-65,80],[-70,83],[-90,81]],
+    [[-85,22],[-80,23],[-75,20.5],[-77,20],[-82,22]],
+    [[-74,19.8],[-69,19.5],[-68.5,18.3],[-74,18]],
+    [[-77,8],[-72,12],[-67,11],[-62,10.5],[-57,6],[-52,5],[-50,0],[-45,-2],[-38,-4],[-35,-7],[-37,-12],[-39,-17],[-41,-22],[-47,-25],[-49,-29],[-53,-34],[-57,-35],[-57,-38],[-62,-39],[-65,-42],[-66,-46],[-69,-51],[-68,-55],[-73,-53],[-75,-47],[-73,-40],[-73,-36],[-71,-30],[-70,-20],[-76,-14],[-80,-6],[-81,-4],[-80,0],[-78,3]],
+    [[-9,37],[-9,43],[-2,43.5],[-1,46],[-4,48],[1,50],[4,52],[8,54],[8,57],[10.5,57.5],[10,55],[12,54],[18,54.5],[21,55],[22,58],[24,59.5],[30,60],[23,60],[21,61],[22,63.5],[25,65.5],[22,65.8],[17,62],[17,60],[18.5,59],[16,56.5],[13,55.5],[11,59],[6,58],[5,61],[8,64],[13,67],[18,70],[25,71],[30,70],[41,67],[40,65],[35,64.5],[37,66],[44,66.5],[44,68],[54,68.5],[60,69],[68,69],[68,72],[73,72.5],[80,73],[88,75.5],[104,77.5],[113,74],[127,72.5],[140,72.5],[150,71],[160,70],[170,70],[180,69],[180,65],[178,62.5],[170,60],[163,58],[162,55],[157,51],[156,57],[160,61],[155,59.5],[143,59],[135,54.5],[141,53],[140,48],[135,43.5],[131,42.5],[129,40],[127.5,39],[129.5,37],[129,35],[126.5,34.5],[126,37],[125,39.5],[121.5,39],[122,40.5],[118,39],[119,37.5],[122.5,37],[119.5,35],[121,32],[122,30],[120,26],[117,23.5],[113,22],[110,21],[108,21.5],[106,19],[109,14],[109,11.5],[106.5,9],[105,10],[103,11],[100.5,13.5],[100,10],[103.5,5],[104,1.5],[101.5,2.5],[100,6.5],[98.5,8],[98.5,13],[97.5,16.5],[94.5,16],[94,19.5],[91.5,22.5],[89,22],[87,21],[85,19.5],[80.5,15.5],[80,13],[79.5,10],[77.5,8],[76,10.5],[73.5,16],[72.5,21],[70,21],[69,22.5],[67,24.5],[61.5,25],[57,25.5],[56.5,27],[52,27.5],[50,30],[48,30],[50,26.5],[51.5,24],[54,24],[56,26],[57,24],[59.5,22.5],[58,19],[55,17],[52,16],[48,14],[43.5,12.5],[42.5,16],[39,21],[37,25],[35,28],[34.5,29.5],[34,31.5],[36,34],[36,36.5],[32,36],[30,36.5],[27.5,37],[26.5,39.5],[29,41],[32,42],[36,41.5],[41.5,41.5],[39,44],[37.5,45],[39,47],[35,46],[33.5,44.5],[31,46.5],[28.5,44],[28,41.5],[26,40.7],[24,40.5],[23,38],[22,36.5],[21,38.5],[19.5,40.5],[19,42],[16,43.5],[13.5,45.5],[12.3,45],[13.5,43.5],[16,41.8],[18.5,40],[16.5,39],[16,38],[15.7,40],[12.5,41.7],[10.5,43],[8.5,44.3],[6,43],[3,43.3],[3,41.8],[0,40],[-0.5,38],[-2,36.8],[-5.5,36]],
+    [[-5.5,36],[10,37],[11,33.5],[20,31],[25,32],[32,31.3],[34,31.5],[32.5,30],[35.5,24],[37,21],[39,16],[43,12],[44,10.5],[51,12],[49,6],[44,1],[40,-3],[39,-7],[40.5,-11],[40.5,-15],[35,-20],[35.5,-24],[32.5,-26],[31,-30],[26,-34],[20,-34.8],[18,-33],[15,-27],[12,-18],[13.5,-11],[12,-5],[9,-1],[9.5,4],[5,6],[1,6],[-4,5],[-8,4.5],[-13,8],[-17,13],[-16.5,20],[-13,27],[-9.5,31],[-6,35.5]],
+    [[49.3,-12],[50.5,-16],[47,-25],[44,-23],[44,-17],[47,-14]],
+    [[-5.5,50],[1,51],[1.5,53],[-2,56],[-2,57.5],[-4,58.5],[-6,57.5],[-5,54.5],[-3,54],[-5,52]],
+    [[-10,52],[-6,52.2],[-6,55],[-8.5,55],[-10,54]],
+    [[-24,65.5],[-18,66.5],[-14,65],[-18,63.5],[-22.5,64]],
+    [[11,79],[20,80.5],[27,80],[21,77.5],[15,76.7]],
+    [[52,71],[57,71],[68,76.5],[60,76]],
+    [[12.5,38],[15.5,38.2],[15,36.7]],
+    [[130,31.5],[131.5,34],[135,35.7],[137,37],[139.5,38.5],[141.5,41],[141,43],[142,45.5],[145.5,43.5],[143,42],[142,39],[141,36],[138.5,34.7],[135.5,33.5],[133,33.5],[131,31.5]],
+    [[142,54],[143.5,50],[143,46],[142,46.5],[142,51]],
+    [[120,23],[121.5,25.2],[122,24],[121,22]],
+    [[120.5,18.5],[122.3,18.3],[122,14],[124,13],[126,9],[126,6.5],[124,6.5],[122,7.5],[123.5,10.5],[121,13.5],[120,16]],
+    [[95.5,5.5],[98,4],[104,-2],[106,-6],[102,-4],[97,1.5]],
+    [[105.5,-6.5],[110,-6.5],[114.5,-7.5],[114,-8.5],[106.5,-7.5]],
+    [[109,1.5],[112,3],[117,7],[119,5],[117.5,1],[116,-4],[110.5,-3]],
+    [[119.5,0.5],[121,1],[125,1.5],[121.5,-1],[123,-5],[120,-5.5],[119.5,-3]],
+    [[131,-1],[134,-1],[138,-1.7],[141,-2.6],[145,-4.5],[147.5,-6],[150.5,-10.5],[146,-8],[142.5,-9],[138,-8],[137,-5],[133,-4],[131.5,-2.5]],
+    [[80,9.7],[81.8,7.5],[80.5,6],[79.8,7.5]],
+    [[114,-22],[114,-26],[115,-34],[118,-35],[124,-33.5],[129,-32],[134,-33],[138,-35.5],[140,-38],[144,-38.5],[147,-38.5],[150,-37],[153,-31],[153.5,-27],[149.5,-22],[146,-19],[145.5,-15],[142.5,-11],[141,-13],[141,-17],[139,-17.5],[136,-15],[136.5,-12],[132,-11.5],[129.5,-15],[126,-14],[122,-18],[117,-20.5]],
+    [[145,-41],[148,-41],[147.5,-43.5],[146,-43.5]],
+    [[173,-34.5],[175.5,-37],[178.5,-38],[177,-39.5],[175,-41.5],[174,-39.5],[174.8,-37.5]],
+    [[172.5,-40.7],[174,-41.8],[171,-44.5],[170,-46.5],[166.5,-46],[168,-44],[171,-42]],
+    // Antarctica
+    [[-180,-78],[-150,-76],[-120,-74],[-100,-72],[-75,-72],[-62,-65],[-56,-63.5],[-60,-70],[-40,-78],[-20,-73],[0,-70],[30,-69],[60,-67],[90,-66],[120,-66.5],[150,-68],[170,-72],[180,-78],[180,-90],[-180,-90]]
+  ];
+
+  var D2R = Math.PI / 180, TAU = Math.PI * 2;
+  function inPoly(x, y, p) {
+    var inside = false;
+    for (var i = 0, j = p.length - 1; i < p.length; j = i++) {
+      var xi = p[i][0], yi = p[i][1], xj = p[j][0], yj = p[j][1];
+      if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  }
+  function vec(lon, lat) {
+    var c = Math.cos(lat * D2R);
+    return [c * Math.sin(lon * D2R), Math.sin(lat * D2R), c * Math.cos(lon * D2R)];
+  }
+
+  // land as evenly spaced dots on the sphere
+  var STEP = 1.25, land = [];
+  (function () {
+    var boxes = LAND.map(function (p) {
+      var b = [999, 999, -999, -999];
+      p.forEach(function (q) { b[0] = Math.min(b[0], q[0]); b[1] = Math.min(b[1], q[1]); b[2] = Math.max(b[2], q[0]); b[3] = Math.max(b[3], q[1]); });
+      return b;
+    });
+    for (var lat = 90 - STEP / 2; lat > -90; lat -= STEP) {
+      var n = Math.max(1, Math.round(360 * Math.cos(lat * D2R) / STEP));
+      for (var i = 0; i < n; i++) {
+        var lon = -180 + (i + 0.5) * 360 / n;
+        for (var k = 0; k < LAND.length; k++) {
+          var b = boxes[k];
+          if (lon < b[0] || lon > b[2] || lat < b[1] || lat > b[3]) continue;
+          if (inPoly(lon, lat, LAND[k])) { var v = vec(lon, lat); land.push(v[0], v[1], v[2]); break; }
+        }
+      }
+    }
+  })();
+
+  // graticule every 30 degrees
+  var grat = [];
+  (function () {
+    var a, b, line;
+    for (a = -180; a < 180; a += 30) { line = []; for (b = -84; b <= 84; b += 4) line.push(vec(a, b)); grat.push(line); }
+    for (b = -60; b <= 60; b += 30) { line = []; for (a = -180; a <= 180; a += 4) line.push(vec(a, b)); grat.push(line); }
+  })();
+
+  var stars = [];
+  (function () {
+    var s = 7;
+    function r() { s = (s * 16807) % 2147483647; return s / 2147483647; }
+    for (var i = 0; i < 170; i++) stars.push([r(), r(), 0.4 + r() * 1.1, 0.25 + r() * 0.6]);
+  })();
+
+  // ---------- state ----------
+  var all = [], shown = [], hidden = {}, rangeH = 0, selected = null;
+  var arrived = {}, firstSnap = false, lastRun = null, connected = false, openPanel = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var canvas = $("globe"), ctx = canvas.getContext("2d");
+  var W = 0, H = 0, dpr = 1;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var HOME = { lon: 8, lat: 38, zoom: 1 };
+  var view = { lon: HOME.lon, lat: HOME.lat, zoom: HOME.zoom, cx: 0, cy: 0, R: 1 };
+  var fly = null, lastTouch = 0, spin = !reduced;
+  var pins = [];   // projected markers for hit-testing
+
+  function norm(id, d) {
+    if (!d || typeof d !== "object") return null;
+    var lat = Number(d.lat), lon = Number(d.lon), ts = Number(d.ts);
+    if (!isFinite(lat) || !isFinite(lon) || !isFinite(ts) || !d.title) return null;
+    var url = typeof d.url === "string" && /^https?:\/\//i.test(d.url) ? d.url : "";
+    lat = Math.max(-89, Math.min(89, lat)); lon = Math.max(-180, Math.min(180, lon));
+    return {
+      id: id, title: String(d.title).slice(0, 220), target: String(d.target || "").slice(0, 80),
+      type: TYPES[d.type] ? d.type : "other", status: STATUS[d.status] ? d.status : "confirmed",
+      country: String(d.country || "").slice(0, 60), place: String(d.place || "").slice(0, 60),
+      lat: lat, lon: lon, v: vec(lon, lat),
+      ts: ts, timeKnown: d.timeKnown === true, summary: String(d.summary || "").slice(0, 600),
+      source: String(d.source || "").slice(0, 60), url: url, added: Number(d.added) || 0
+    };
+  }
+
+  function spread(list) {
+    var groups = {};
+    for (var i = list.length - 1; i >= 0; i--) {
+      var it = list[i], key = Math.round(it.lon / 0.6) + ":" + Math.round(it.lat / 0.6), n = groups[key] = (groups[key] || 0) + 1;
+      if (n > 1) {
+        var a = (n - 1) * 2.39996, r = 0.85 * Math.sqrt(n - 1);
+        it.v = vec(it.lon + Math.cos(a) * r / Math.max(0.3, Math.cos(it.lat * D2R)), it.lat + Math.sin(a) * r);
+      }
+    }
+  }
+
+  // ---------- time ----------
+  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function when(it) {
+    var d = new Date(it.ts), s = d.getDate() + " " + MON[d.getMonth()];
+    if (!it.timeKnown) return s;
+    var ago = Date.now() - it.ts;
+    if (ago >= 0 && ago < 36e5) return Math.max(1, Math.round(ago / 6e4)) + " min ago";
+    if (ago >= 0 && ago < 864e5) return Math.round(ago / 36e5) + " h ago";
+    return s + " " + pad(d.getHours()) + ":" + pad(d.getMinutes());
+  }
+  function isNew(it) {
+    var now = Date.now();
+    return (arrived[it.id] && now - arrived[it.id] < 18e5) || (it.added && now - it.added < 36e5);
+  }
+  function place(it) { return [it.place, it.country].filter(Boolean).join(", "); }
+
+  // ---------- rendering of lists ----------
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function typeTag(it) { var t = el("span", "tag", TYPES[it.type].label); t.style.setProperty("--c", TYPES[it.type].color); return t; }
+  function statusTag(it) { return el("span", "tag st" + STCLS[it.status], STATUS[it.status]); }
+
+  function applyFilters() {
+    var cut = rangeH ? Date.now() - rangeH * 36e5 : 0;
+    shown = all.filter(function (it) { return !hidden[it.type] && it.ts >= cut && !(onlyConfirmed && it.status === "claimed"); });
+    if (selected && !shown.some(function (it) { return it.id === selected; })) selected = null;
+    renderChips(); renderFeed(); renderStats(); renderCard();
+    $("navCount").textContent = firstSnap ? String(shown.length) : "";
+  }
+
+  function renderChips() {
+    var cut = rangeH ? Date.now() - rangeH * 36e5 : 0, counts = {};
+    all.forEach(function (it) { if (it.ts >= cut) counts[it.type] = (counts[it.type] || 0) + 1; });
+    var box = $("chips");
+    box.textContent = "";
+    Object.keys(TYPES).forEach(function (k) {
+      var b = el("button", "chip");
+      b.type = "button"; b.id = "chip-" + k;
+      b.style.setProperty("--c", TYPES[k].color);
+      b.setAttribute("aria-pressed", hidden[k] ? "false" : "true");
+      b.appendChild(el("i")); b.appendChild(el("span", "", TYPES[k].label)); b.appendChild(el("span", "n", String(counts[k] || 0)));
+      b.addEventListener("click", function () { hidden[k] = !hidden[k]; applyFilters(); $("chip-" + k).focus(); });
+      box.appendChild(b);
+    });
+  }
+
+  function emptyText() {
+    return !firstSnap ? "Loading incidents …" : all.length ? "No incidents match the filters. Turn on more attack types or pick a longer time range." : "No incidents have been added yet.";
+  }
+
+  function renderFeed() {
+    var ol = $("feed");
+    ol.textContent = "";
+    if (!shown.length) { ol.appendChild(el("li", "empty", emptyText())); return; }
+    shown.forEach(function (it) {
+      var li = el("li"), b = el("button", "item");
+      b.type = "button"; b.id = "it-" + it.id;
+      b.style.setProperty("--c", TYPES[it.type].color);
+      if (it.id === selected) b.setAttribute("aria-current", "true");
+      var w = el("span", "when");
+      w.appendChild(el("span", "", when(it)));
+      if (isNew(it)) w.appendChild(el("span", "tag new", "NEW"));
+      w.appendChild(statusTag(it));
+      b.appendChild(w);
+      b.appendChild(el("span", "title", it.title));
+      var wh = el("span", "where");
+      wh.appendChild(typeTag(it)); wh.appendChild(el("span", "", place(it)));
+      b.appendChild(wh);
+      b.addEventListener("click", function () { select(it.id); });
+      li.appendChild(b); ol.appendChild(li);
+    });
+  }
+
+  function bars(box, rows, max) {
+    box.textContent = "";
+    if (!rows.length) { box.appendChild(el("li", "", "–")); return; }
+    rows.forEach(function (r) {
+      var li = el("li"), tr = el("span", "track"), f = el("span", "fill");
+      f.style.width = Math.round(r.n / max * 100) + "%";
+      if (r.color) f.style.setProperty("--c", r.color);
+      tr.appendChild(f);
+      li.appendChild(el("span", "lab", r.label)); li.appendChild(tr); li.appendChild(el("span", "v", String(r.n)));
+      box.appendChild(li);
+    });
+  }
+
+  function renderStats() {
+    var now = Date.now(), c24 = 0, c7 = 0, lands = {}, types = {}, nConf = 0;
+    shown.forEach(function (it) {
+      if (now - it.ts <= 864e5) c24++;
+      if (now - it.ts <= 7 * 864e5) c7++;
+      if (it.country) lands[it.country] = (lands[it.country] || 0) + 1;
+      types[it.type] = (types[it.type] || 0) + 1;
+      if (it.status !== "claimed") nConf++;
+    });
+    bars($("barsStatus"), shown.length ? [{ label: "Confirmed", n: nConf, color: "#5fe08c" }, { label: "Claimed", n: shown.length - nConf, color: "#6f7ba3" }] : [], Math.max(1, nConf, shown.length - nConf));
+    $("s24").textContent = firstSnap ? c24 : "–";
+    $("s7").textContent = firstSnap ? c7 : "–";
+    $("sLand").textContent = firstSnap ? Object.keys(lands).length : "–";
+    var tr = Object.keys(types).map(function (k) { return { label: TYPES[k].label, n: types[k], color: TYPES[k].color }; }).sort(function (a, b) { return b.n - a.n; });
+    var lr = Object.keys(lands).map(function (k) { return { label: k, n: lands[k] }; }).sort(function (a, b) { return b.n - a.n; }).slice(0, 6);
+    bars($("barsType"), tr, tr.length ? tr[0].n : 1);
+    bars($("barsLand"), lr, lr.length ? lr[0].n : 1);
+  }
+
+  function renderCard() {
+    var card = $("card");
+    var it = selected ? shown.filter(function (x) { return x.id === selected; })[0] : shown[0];
+    if (!it) { card.hidden = true; return; }
+    var full = !!selected;
+    card.hidden = false;
+    card.style.setProperty("--c", TYPES[it.type].color);
+    $("cEyebrow").hidden = full;
+    $("cEyebrow").textContent = isNew(it) ? "NEW" : "LATEST";
+    $("cType").textContent = TYPES[it.type].label;
+    $("cType").style.setProperty("--c", TYPES[it.type].color);
+    $("cStatus").textContent = STATUS[it.status];
+    $("cStatus").className = "tag st" + STCLS[it.status];
+    $("cOpen").hidden = full; $("cClose").hidden = !full;
+    $("cOpen").onclick = function () { select(it.id); };
+    $("cTitle").textContent = it.title;
+    $("cMeta").textContent = [when(it), place(it)].filter(Boolean).join(" · ");
+    $("cSummary").hidden = !full || !it.summary; $("cSummary").textContent = it.summary;
+    var s = $("cSource");
+    s.hidden = !full; s.textContent = "";
+    if (it.url) {
+      s.appendChild(document.createTextNode("Source: "));
+      var a = el("a", "", it.source || "Read the report");
+      a.href = it.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      s.appendChild(a);
+    } else if (it.source) s.textContent = "Source: " + it.source;
+  }
+
+  function setStatus(kind, text) { $("status").className = "status " + kind; $("statusText").textContent = text; }
+  function renderStatus() {
+    if (!connected) return;
+    var d = lastRun && new Date(lastRun);
+    setStatus("live", "LIVE" + (d ? " · sources checked " + d.getDate() + " " + MON[d.getMonth()] + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) : " · connected"));
+  }
+
+  function select(id) {
+    selected = selected === id ? null : id;
+    renderFeed(); renderCard();
+    var it = selected && shown.filter(function (x) { return x.id === selected; })[0];
+    if (it) { fly = { lon: it.lon, lat: Math.max(-70, Math.min(70, it.lat)) }; spin = false; }
+    var b = selected && $("it-" + selected);
+    if (b && openPanel === "feed") b.scrollIntoView({ block: "nearest" });
+  }
+  $("cClose").addEventListener("click", function () { selected = null; renderFeed(); renderCard(); });
+
+  // ---------- panels ----------
+  function setPanel(name) {
+    openPanel = openPanel === name ? null : name;
+    var p = $("panel");
+    p.hidden = !openPanel;
+    document.body.classList.toggle("panel-open", !!openPanel);
+    Array.prototype.forEach.call(document.querySelectorAll(".menu button"), function (b) {
+      b.setAttribute("aria-expanded", b.dataset.p === openPanel ? "true" : "false");
+    });
+    if (!openPanel) return;
+    $("panelTitle").textContent = PANELS[openPanel];
+    Array.prototype.forEach.call(p.querySelectorAll("[data-sec]"), function (s) { s.hidden = s.dataset.sec !== openPanel; });
+  }
+  document.querySelector(".menu").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (b) setPanel(b.dataset.p);
+  });
+  $("panelClose").addEventListener("click", function () {
+    var b = document.querySelector('.menu button[data-p="' + openPanel + '"]');
+    setPanel(openPanel); if (b) b.focus();
+  });
+  $("statusSeg").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    onlyConfirmed = b.dataset.s === "confirmed";
+    Array.prototype.forEach.call($("statusSeg").children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    applyFilters();
+  });
+  $("range").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    rangeH = Number(b.dataset.r);
+    Array.prototype.forEach.call($("range").children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    applyFilters();
+  });
+
+  // ---------- globe ----------
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    view.cx = 0;
+  }
+  function frameTarget() {
+    var narrow = W <= 860, top = narrow ? 96 : 70, cx = W / 2, cy, avail;
+    if (openPanel && !narrow) cx = (W - 406) / 2;
+    if (openPanel && narrow) { avail = H * 0.42 - top; cy = top + avail / 2; }
+    else { avail = H - top - (narrow ? 110 : 40); cy = top + avail / 2; }
+    var span = Math.min(avail, (openPanel && !narrow ? W - 406 : W) - 24);
+    return { cx: cx, cy: cy, R: Math.max(60, span * 0.47) };
+  }
+  function rgba(hex, a) {
+    var n = parseInt(hex.slice(1), 16);
+    return "rgba(" + (n >> 16) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
+  }
+
+  function draw(t) {
+    if (!W) return;
+    var now = Date.now(), f = frameTarget();
+    if (!view.cx) { view.cx = f.cx; view.cy = f.cy; view.R = f.R; }
+    var k = reduced ? 1 : 0.14;
+    view.cx += (f.cx - view.cx) * k; view.cy += (f.cy - view.cy) * k; view.R += (f.R - view.R) * k;
+
+    if (fly) {
+      var dl = ((fly.lon - view.lon + 540) % 360) - 180, dp = fly.lat - view.lat;
+      if (reduced || (Math.abs(dl) < 0.05 && Math.abs(dp) < 0.05)) { view.lon = fly.lon; view.lat = fly.lat; fly = null; }
+      else { view.lon += dl * 0.1; view.lat += dp * 0.1; }
+    } else if (spin && !drag && !selected && now - lastTouch > 5000) {
+      view.lon += 0.035;
+    }
+    view.lon = ((view.lon + 540) % 360) - 180;
+
+    var cx = view.cx, cy = view.cy, R = view.R * view.zoom;
+    var sl = Math.sin(view.lon * D2R), cl = Math.cos(view.lon * D2R), sp = Math.sin(view.lat * D2R), cp = Math.cos(view.lat * D2R);
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = "#050814"; ctx.fillRect(0, 0, W, H);
+
+    // stars
+    for (var s = 0; s < stars.length; s++) {
+      ctx.fillStyle = "rgba(190,205,255," + stars[s][3] + ")";
+      ctx.fillRect(stars[s][0] * W, stars[s][1] * H, stars[s][2], stars[s][2]);
+    }
+
+    // atmosphere
+    var g = ctx.createRadialGradient(cx, cy, R * 0.92, cx, cy, R * 1.22);
+    g.addColorStop(0, "rgba(70,140,255,.42)"); g.addColorStop(0.35, "rgba(60,120,255,.16)"); g.addColorStop(1, "rgba(60,120,255,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.22, 0, TAU); ctx.fill();
+
+    // ocean
+    g = ctx.createRadialGradient(cx - R * 0.4, cy - R * 0.45, R * 0.05, cx, cy, R);
+    g.addColorStop(0, "#1b2c63"); g.addColorStop(0.55, "#0f1a40"); g.addColorStop(1, "#070c22");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill();
+    ctx.strokeStyle = "rgba(120,170,255,.45)"; ctx.lineWidth = 1; ctx.stroke();
+
+    // graticule
+    ctx.strokeStyle = "rgba(120,150,230,.13)"; ctx.lineWidth = 1; ctx.beginPath();
+    var i, j, x1, z1, x, y, z, v;
+    for (i = 0; i < grat.length; i++) {
+      var pen = false;
+      for (j = 0; j < grat[i].length; j++) {
+        v = grat[i][j];
+        x1 = v[0] * cl - v[2] * sl; z1 = v[0] * sl + v[2] * cl;
+        y = v[1] * cp - z1 * sp; z = v[1] * sp + z1 * cp;
+        if (z > 0) { if (pen) ctx.lineTo(cx + R * x1, cy - R * y); else ctx.moveTo(cx + R * x1, cy - R * y); pen = true; } else pen = false;
+      }
+    }
+    ctx.stroke();
+
+    // land dots in three brightness bands
+    var rad = Math.max(0.6, R * STEP * D2R * 0.34), buckets = [[], [], []];
+    for (i = 0; i < land.length; i += 3) {
+      x1 = land[i] * cl - land[i + 2] * sl; z1 = land[i] * sl + land[i + 2] * cl;
+      y = land[i + 1] * cp - z1 * sp; z = land[i + 1] * sp + z1 * cp;
+      if (z <= 0.02) continue;
+      buckets[z > 0.62 ? 0 : z > 0.3 ? 1 : 2].push(cx + R * x1, cy - R * y);
+    }
+    var cols = ["#7c93d6", "#5a70b0", "#3d4e84"], sz = [1, 0.9, 0.72];
+    for (j = 0; j < 3; j++) {
+      ctx.fillStyle = cols[j]; ctx.beginPath();
+      var b = buckets[j], rr = rad * sz[j];
+      for (i = 0; i < b.length; i += 2) { ctx.moveTo(b[i] + rr, b[i + 1]); ctx.arc(b[i], b[i + 1], rr, 0, TAU); }
+      ctx.fill();
+    }
+
+    // markers
+    pins = [];
+    for (i = shown.length - 1; i >= 0; i--) {
+      var it = shown[i]; v = it.v;
+      x1 = v[0] * cl - v[2] * sl; z1 = v[0] * sl + v[2] * cl;
+      y = v[1] * cp - z1 * sp; z = v[1] * sp + z1 * cp;
+      if (z <= 0.03) continue;
+      pins.push({ it: it, x: cx + R * x1, y: cy - R * y, ux: x1, uy: y, z: z, i: i });
+    }
+    pins.sort(function (a, b) { return (a.it.status === "claimed" ? 0 : 1) - (b.it.status === "claimed" ? 0 : 1); });
+    ctx.globalCompositeOperation = "lighter";
+    var hr = Math.max(22, R * 0.11);
+    pins.forEach(function (p) {
+      var col = TYPES[p.it.type].color, gg = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, hr);
+      gg.addColorStop(0, rgba(col, (p.it.status === "claimed" ? 0.1 : 0.3) * p.z)); gg.addColorStop(1, rgba(col, 0));
+      ctx.fillStyle = gg; ctx.beginPath(); ctx.arc(p.x, p.y, hr, 0, TAU); ctx.fill();
+    });
+    ctx.globalCompositeOperation = "source-over";
+
+    pins.forEach(function (p) {
+      var it = p.it, col = TYPES[it.type].color;
+      var recent = now - it.ts < 72 * 36e5, fresh = isNew(it), sel = it.id === selected;
+      if (it.status === "claimed" && !sel) {
+        if (fresh) {
+          var ph0 = reduced ? 0.5 : ((t + p.i * 370) % 1400) / 1400;
+          ctx.strokeStyle = rgba(col, (1 - ph0) * 0.8); ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.arc(p.x, p.y, 4 + ph0 * 16, 0, TAU); ctx.stroke();
+        }
+        ctx.fillStyle = "rgba(5,8,20,.75)"; ctx.beginPath(); ctx.arc(p.x, p.y, 4, 0, TAU); ctx.fill();
+        ctx.strokeStyle = col; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.arc(p.x, p.y, 3.4, 0, TAU); ctx.stroke();
+        return;
+      }
+      // beam rising off the surface
+      var h = (fresh ? 0.16 : recent ? 0.1 : 0.05) * R, tx = p.x + p.ux * h, ty = p.y - p.uy * h;
+      var lg = ctx.createLinearGradient(p.x, p.y, tx, ty);
+      lg.addColorStop(0, rgba(col, 0.95)); lg.addColorStop(1, rgba(col, 0));
+      ctx.strokeStyle = lg; ctx.lineWidth = sel ? 3 : 2; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(tx, ty); ctx.stroke();
+      if (recent || fresh) {
+        var period = fresh ? 1400 : 2600, ph = reduced ? 0.5 : ((t + p.i * 370) % period) / period;
+        ctx.strokeStyle = rgba(col, (1 - ph) * (fresh ? 0.95 : 0.65));
+        ctx.lineWidth = fresh ? 2 : 1.3;
+        ctx.beginPath(); ctx.ellipse(p.x, p.y, 5 + ph * (fresh ? 24 : 15), (5 + ph * (fresh ? 24 : 15)) * (0.45 + 0.55 * p.z), 0, 0, TAU); ctx.stroke();
+      }
+      ctx.fillStyle = "#050814"; ctx.beginPath(); ctx.arc(p.x, p.y, sel ? 8.5 : 7, 0, TAU); ctx.fill();
+      if (it.status !== "claimed") { ctx.strokeStyle = "#eaf0ff"; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(p.x, p.y, sel ? 7.5 : 6.2, 0, TAU); ctx.stroke(); }
+      ctx.fillStyle = col; ctx.beginPath(); ctx.arc(p.x, p.y, sel ? 5.5 : 4.2, 0, TAU); ctx.fill();
+      if (it.status === "claimed") { ctx.fillStyle = "#050814"; ctx.beginPath(); ctx.arc(p.x, p.y, 2.2, 0, TAU); ctx.fill(); }
+      if (sel) {
+        ctx.strokeStyle = "#eaf0ff"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p.x, p.y, 12, 0, TAU); ctx.stroke();
+        var label = it.target || it.place;
+        if (label) {
+          ctx.font = "600 12.5px 'IBM Plex Sans', system-ui, sans-serif";
+          var tw = ctx.measureText(label).width, lx = p.x + 17;
+          if (lx + tw + 12 > W) lx = p.x - 17 - tw - 12;
+          ctx.fillStyle = "rgba(5,8,20,.92)"; ctx.fillRect(lx, p.y - 11, tw + 12, 22);
+          ctx.fillStyle = "#eaf0ff"; ctx.textBaseline = "middle"; ctx.fillText(label, lx + 6, p.y + 0.5);
+        }
+      }
+    });
+  }
+
+  // ---------- interaction ----------
+  var pointers = {}, drag = null, pinch = 0;
+  function nearest(px, py) {
+    var best = null, bd = 16 * 16;
+    pins.forEach(function (p) { var d = (p.x - px) * (p.x - px) + (p.y - py) * (p.y - py); if (d < bd) { bd = d; best = p; } });
+    return best;
+  }
+  function setZoom(z) { view.zoom = Math.max(0.7, Math.min(4, z)); lastTouch = Date.now(); }
+  function touched() { lastTouch = Date.now(); fly = null; }
+
+  canvas.addEventListener("pointerdown", function (e) {
+    canvas.setPointerCapture(e.pointerId);
+    pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pointers);
+    if (ids.length === 1) { drag = { x: e.clientX, y: e.clientY, moved: 0 }; canvas.classList.add("drag"); }
+    else if (ids.length === 2) {
+      var a = pointers[ids[0]], b = pointers[ids[1]];
+      pinch = Math.hypot(a.x - b.x, a.y - b.y); drag = null;
+    }
+    touched();
+  });
+  canvas.addEventListener("pointermove", function (e) {
+    if (!pointers[e.pointerId]) {
+      var p = nearest(e.clientX, e.clientY), tip = $("tip");
+      canvas.style.cursor = p ? "pointer" : "";
+      if (!p) { tip.hidden = true; return; }
+      tip.hidden = false;
+      tip.textContent = (p.it.target || p.it.title) + " · " + TYPES[p.it.type].label;
+      tip.style.left = Math.max(70, Math.min(W - 70, p.x)) + "px"; tip.style.top = Math.max(40, p.y) + "px";
+      return;
+    }
+    pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pointers);
+    if (ids.length === 2) {
+      var a = pointers[ids[0]], b = pointers[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinch) setZoom(view.zoom * d / pinch);
+      pinch = d; return;
+    }
+    if (!drag) return;
+    var dx = e.clientX - drag.x, dy = e.clientY - drag.y, R = view.R * view.zoom;
+    drag.moved += Math.abs(dx) + Math.abs(dy);
+    drag.x = e.clientX; drag.y = e.clientY;
+    view.lon -= dx / R / D2R; view.lat = Math.max(-80, Math.min(80, view.lat + dy / R / D2R));
+    $("tip").hidden = true; touched();
+  });
+  function up(e) {
+    var was = drag;
+    delete pointers[e.pointerId];
+    if (!Object.keys(pointers).length) { canvas.classList.remove("drag"); drag = null; pinch = 0; }
+    if (e.type === "pointerup" && was && was.moved < 6) {
+      var p = nearest(e.clientX, e.clientY);
+      if (p) { if (selected !== p.it.id) select(p.it.id); }
+      else if (selected) { selected = null; renderFeed(); renderCard(); }
+    }
+    lastTouch = Date.now();
+  }
+  canvas.addEventListener("pointerup", up);
+  canvas.addEventListener("pointercancel", up);
+  canvas.addEventListener("pointerleave", function () { $("tip").hidden = true; });
+  canvas.addEventListener("wheel", function (e) { e.preventDefault(); setZoom(view.zoom * Math.exp(-e.deltaY * 0.0015)); }, { passive: false });
+  canvas.addEventListener("keydown", function (e) {
+    var k = e.key, st = 8 / view.zoom;
+    if (k === "ArrowLeft") view.lon -= st; else if (k === "ArrowRight") view.lon += st;
+    else if (k === "ArrowUp") view.lat = Math.min(80, view.lat + st); else if (k === "ArrowDown") view.lat = Math.max(-80, view.lat - st);
+    else if (k === "+" || k === "=") setZoom(view.zoom * 1.25); else if (k === "-") setZoom(view.zoom / 1.25);
+    else return;
+    e.preventDefault(); touched();
+  });
+  $("zIn").addEventListener("click", function () { setZoom(view.zoom * 1.35); });
+  $("zOut").addEventListener("click", function () { setZoom(view.zoom / 1.35); });
+  $("zReset").addEventListener("click", function () { view.zoom = HOME.zoom; fly = { lon: HOME.lon, lat: HOME.lat }; spin = !reduced; lastTouch = 0; });
+
+  window.addEventListener("resize", resize);
+  resize();
+  (function loop(t) { draw(t || 0); requestAnimationFrame(loop); })(0);
+  setInterval(function () { if (firstSnap) { renderFeed(); renderStats(); renderCard(); renderStatus(); } }, 60000);
+  renderChips(); renderFeed();
+
+  // ---------- data ----------
+  // Incidents live in data/incidents.json next to this page. The file is re-read every minute,
+  // so new entries appear on the globe without a reload.
+  var DATA_URL = "data/incidents.json", POLL_MS = 60000, failures = 0;
+
+  function ingest(payload) {
+    var rows = payload && Array.isArray(payload.incidents) ? payload.incidents : [], list = [];
+    rows.forEach(function (d) { var it = d && d.id ? norm(String(d.id), d) : null; if (it) list.push(it); });
+    list.sort(function (x, y) { return y.ts - x.ts; });
+    if (firstSnap) {
+      var known = {};
+      all.forEach(function (it) { known[it.id] = 1; });
+      list.forEach(function (it) { if (!known[it.id]) arrived[it.id] = Date.now(); });
+    }
+    spread(list);
+    all = list;
+    lastRun = payload && isFinite(Number(payload.lastRun)) ? Number(payload.lastRun) : null;
+    firstSnap = true; connected = true; failures = 0;
+    renderStatus(); applyFilters();
+  }
+
+  function poll() {
+    fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(ingest)
+      .catch(function () {
+        failures++;
+        if (!firstSnap) { firstSnap = true; applyFilters(); }
+        if (failures >= 2 || !all.length) { connected = false; setStatus("warn", all.length ? "Can't reach the incident feed. Showing the last data loaded." : "Can't load the incident feed. Retrying every minute."); }
+      });
+  }
+  poll();
+  setInterval(poll, POLL_MS);
+})();
+</script>
+</body>
+</html>
