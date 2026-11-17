@@ -146,7 +146,15 @@ ATTACK_RE = re.compile(
     r"dataangrep|hackerangrep|hacket|løsepengevirus|datainnbrudd|cyberangrep", re.I)
 SKIP_RE = re.compile(
     r"\bpatch(es|ed)?\b|cve-\d|vulnerabilit|zero-day|webinar|podcast|how to\b|\bguide\b|\breport:|\bsurvey\b|\btips\b|"
-    r"\bfine[ds]?\b|sentenced|pleads guilty|arrest(ed|s)?\b|\bindict|lawsuit|settle(s|ment)?\b|week in review|\bopinion\b", re.I)
+    r"\bfine[ds]?\b|sentenced|pleads guilty|arrest(ed|s)?\b|\bindict|lawsuit|settle(s|ment)?\b|week in review|\bopinion\b|"
+    r"extradit|\bcharged\b|\bprison\b|\bjail|\bsue[sd]?\b|\bcourt\b|convicted|\btrial\b|\bseized?\b|takedown|dismantl|sanction|"
+    r"threat actors?|-nexus|\bapt\d*\b|\bcampaign\b|\bmalware\b|\bbotnet\b|\bexploit|\bflaw\b|\bbug\b|researchers?\b|\bstudy\b|"
+    r"\bwarns?\b|\badvisory\b|\bfirst\b|\bhow\b|\bwhy\b|\bwhat\b|\?$", re.I)
+# "Russian hackers", "China-linked group": the country of the attacker, not of the victim
+ATTACKER_RE = re.compile(
+    r"(pro-)?[a-z]+( korean)?[\s-](speaking|linked|backed|nexus|aligned|sponsored|based)\b|"
+    r"(pro-)?(russian|chinese|iranian|north korean|belarusian|pakistani|indian|vietnamese|turkish|israeli|ukrainian)"
+    r"[\s-](state[\s-])?(hackers?|hacktivists?|groups?|gangs?|actors?|spies|apt|cyber ?spies|operatives?)", re.I)
 
 
 def log(*a):
@@ -205,7 +213,7 @@ def country_code(raw):
 
 def find_country(*texts):
     for t in texts:
-        m = ALIAS_RE.search(str(t or "").lower())
+        m = ALIAS_RE.search(ATTACKER_RE.sub(" ", str(t or "").lower()))
         if m:
             return ALIASES[m.group(1)]
     return None
@@ -267,8 +275,10 @@ def from_press_api(now):
             continue
         title = clean(r.get("title") or r.get("victim") or "", 140)
         victim = clean(r.get("victim") or "", 80)
-        code = country_code(r.get("country")) or find_country(title)
+        code = find_country(title) or country_code(r.get("country"))
         ts = to_ms(r.get("date") or r.get("added") or r.get("published"))
+        if sum(ch.isascii() for ch in title) < 0.7 * max(1, len(title)):
+            continue  # the site is in English; skip headlines in other scripts
         url = r.get("url") or r.get("link") or ""
         if not title or not code or not ts or not str(url).startswith("http"):
             continue
@@ -351,6 +361,12 @@ def main():
                 if w not in ("attack", "cyberattack", "ransomware", "breach", "hackers", "after", "confirms", "data")}
 
     def same_story(inc):
+        # an organisation that is already on the globe is named in this headline
+        t = inc["title"].lower()
+        for o in incidents:
+            tg = str(o.get("target") or "").lower().strip()
+            if len(tg) >= 5 and re.search(r"(?<![a-z0-9])" + re.escape(tg) + r"(?![a-z0-9])", t):
+                return True
         # several outlets often report one incident: same country, within two days, three shared words
         w = words(inc["title"])
         for o in incidents:
