@@ -1,5 +1,5 @@
 {
- "lastRun": 1794955568183,
+ "lastRun": 1794958541307,
  "incidents": [
   {
    "id": "2026-11-17-fugaku",
@@ -50,6 +50,24 @@
    "source": "RansomLook",
    "url": "https://www.ransomlook.io/recent",
    "added": 0,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-17-sonoco",
+   "title": "Helix lists Sonoco",
+   "target": "Sonoco",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1794943335183,
+   "summary": "Listed by Helix on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U29ub2NvQEhlbGl4",
+   "added": 1794958541307,
+   "auto": true,
    "timeKnown": true
   },
   {
