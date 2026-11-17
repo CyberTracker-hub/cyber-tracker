@@ -1,5 +1,5 @@
 {
- "lastRun": 1794955292973,
+ "lastRun": 1794955568183,
  "incidents": [
   {
    "id": "2026-11-17-fugaku",
@@ -1758,6 +1758,23 @@
    "timeKnown": true
   },
   {
+   "id": "2026-11-16-kreiskrankenhaus-greiz-ronneburg",
+   "title": "Cyberangriff auf Kreiskrankenhaus in Greiz",
+   "target": "Kreiskrankenhaus Greiz-Ronneburg",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1794787200000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "kma-online.de",
+   "url": "https://www.kma-online.de/aktuelles/it-digital-health/detail/cyberangriff-auf-kreiskrankenhaus-in-greiz-56516",
+   "added": 1794955568183,
+   "auto": true
+  },
+  {
    "id": "2026-11-15-connectwell-industries-pvt-ltd-connectwe",
    "title": "PixelLeaks lists Connectwell Industries Pvt Ltd (connectwell.com)",
    "target": "Connectwell Industries Pvt Ltd (connectwell.com)",
@@ -1864,6 +1881,57 @@
    "timeKnown": true
   },
   {
+   "id": "2026-11-15-tribunal-de-justi-a-de-minas-gerais-tjmg",
+   "title": "TJMG: Vazamento de dados após ataque cibernético é investigado | G1",
+   "target": "Tribunal de Justiça de Minas Gerais (TJMG)",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Brazil",
+   "place": "",
+   "lat": -14.2,
+   "lon": -51.9,
+   "ts": 1794700800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "g1.globo.com",
+   "url": "https://g1.globo.com/mg/minas-gerais/noticia/2026/11/15/tjmg-apura-vazamento-de-arquivos-apos-ataque-cibernetico.ghtml",
+   "added": 1794955568183,
+   "auto": true
+  },
+  {
+   "id": "2026-11-15-perry-local-schools",
+   "title": "Perry Local Schools closed Monday, Nov. 16, due to ‘cyber incident’",
+   "target": "Perry Local Schools",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1794700800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "fox8.com",
+   "url": "https://fox8.com/news/stark-co-school-district-closed-due-to-cyber-incident/",
+   "added": 1794955568183,
+   "auto": true
+  },
+  {
+   "id": "2026-11-15-south-portland",
+   "title": "South Portland closes city offices after cybersecurity incident",
+   "target": "South Portland",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1794700800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "wgme.com",
+   "url": "https://wgme.com/news/local/south-portland-closes-city-offices-after-cybersecurity-incident-maine",
+   "added": 1794955568183,
+   "auto": true
+  },
+  {
    "id": "2026-11-14-quantum-systems",
    "title": "German drone maker Quantum Systems targeted in cyberattack",
    "target": "Quantum Systems",
@@ -1878,6 +1946,23 @@
    "url": "https://usaherald.com/worldwide-cyberattack-report-november-14-2026/",
    "ts": 1794654000000,
    "added": 0
+  },
+  {
+   "id": "2026-11-14-hospital-cl-nico-de-la-universidad-de-ch",
+   "title": "Hospital Clínico de la Universidad de Chile confirma ciberataque: presenta \"dificultades en procesos de atención y servicios\"",
+   "target": "Hospital Clínico de la Universidad de Chile",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Chile",
+   "place": "",
+   "lat": -35.7,
+   "lon": -71.5,
+   "ts": 1794614400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "t13.cl",
+   "url": "https://www.t13.cl/noticia/nacional/hospital-clinico-universidad-chile-denuncia-ciberataque-presenta-dificultades-p-16-11-2026",
+   "added": 1794955568183,
+   "auto": true
   },
   {
    "id": "2026-11-13-ut-arlington",
