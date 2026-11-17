@@ -207,6 +207,7 @@ body.panel-open .hint { display: none; }
       <p>Cyber Tracker plots newly reported cyberattacks on the globe. Each marker stands where the affected organisation is based, not where the attacker is.</p>
       <p>Everything that gets reported shows up. A solid marker with a white ring and a beam is Confirmed: the organisation itself or a news desk has confirmed the attack. A small hollow ring is Claimed: an attacker listed the victim on a leak site and nobody has verified it yet. Every incident links to where it was reported.</p>
       <p>Markers with a moving ring were reported in the last three days. New incidents appear on the globe while the page is open.</p>
+      <p>Sources are checked automatically every 15 minutes: ransomware leak sites through Ransomware.live, and security and news feeds. Automatic entries are placed at the centre of the affected country.</p>
       <div><h3>Controls</h3><p>Drag to spin. Scroll or pinch to zoom. Arrow keys and + / − work when the globe has focus. Select a marker or a feed entry to fly to it.</p></div>
     </div>
   </div>
@@ -793,7 +794,10 @@ body.panel-open .hint { display: none; }
   // ---------- data ----------
   // Incidents live in data/incidents.json next to this page. The file is re-read every minute,
   // so new entries appear on the globe without a reload.
-  var DATA_URL = "data/incidents.json", POLL_MS = 60000, failures = 0;
+  // The copy on raw.githubusercontent.com is tried first because it is updated the moment the
+  // collector commits; the copy beside the page is the fallback.
+  var DATA_URLS = ["https://raw.githubusercontent.com/CyberTracker-hub/cyber-tracker/main/data/incidents.json", "data/incidents.json"];
+  var POLL_MS = 60000, failures = 0;
 
   function ingest(payload) {
     var rows = payload && Array.isArray(payload.incidents) ? payload.incidents : [], list = [];
@@ -812,8 +816,11 @@ body.panel-open .hint { display: none; }
   }
 
   function poll() {
-    fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" })
-      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+    function get(u) {
+      return fetch(u + "?t=" + Date.now(), { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
+    }
+    get(DATA_URLS[0]).catch(function () { return get(DATA_URLS[1]); })
       .then(ingest)
       .catch(function () {
         failures++;
