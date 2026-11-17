@@ -187,7 +187,7 @@ body.panel-open .hint { display: none; }
         <div class="seg" id="range" role="group" aria-label="Time range">
           <button type="button" data-r="24" aria-pressed="false">24 hours</button>
           <button type="button" data-r="168" aria-pressed="false">7 days</button>
-          <button type="button" data-r="0" aria-pressed="true">All</button>
+          <button type="button" data-r="0" aria-pressed="true" id="rangeAll">All</button>
         </div>
       </div>
     </div>
@@ -207,7 +207,6 @@ body.panel-open .hint { display: none; }
       <p>Cyber Tracker plots newly reported cyberattacks on the globe. Each marker stands where the affected organisation is based, not where the attacker is.</p>
       <p>Everything that gets reported shows up. A solid marker with a white ring and a beam is Confirmed: the organisation itself or a news desk has confirmed the attack. A small hollow ring is Claimed: an attacker listed the victim on a leak site and nobody has verified it yet. Every incident links to where it was reported.</p>
       <p>Markers with a moving ring were reported in the last three days. New incidents appear on the globe while the page is open.</p>
-      <p>Sources are checked automatically every 15 minutes: ransomware leak sites through Ransomware.live, and security and news feeds. Automatic entries are placed at the centre of the affected country.</p>
       <div><h3>Controls</h3><p>Drag to spin. Scroll or pinch to zoom. Arrow keys and + / − work when the globe has focus. Select a marker or a feed entry to fly to it.</p></div>
     </div>
   </div>
@@ -406,8 +405,13 @@ body.panel-open .hint { display: none; }
     var cut = rangeH ? Date.now() - rangeH * 36e5 : 0;
     shown = all.filter(function (it) { return !hidden[it.type] && it.ts >= cut && !(onlyConfirmed && it.status === "claimed"); });
     if (selected && !shown.some(function (it) { return it.id === selected; })) selected = null;
-    renderChips(); renderFeed(); renderStats(); renderCard();
+    renderChips(); renderRangeAll(); renderFeed(); renderStats(); renderCard();
     $("navCount").textContent = firstSnap ? String(shown.length) : "";
+  }
+
+  function renderRangeAll() {
+    var oldest = all.length ? all[all.length - 1].ts : 0, d = new Date(oldest);
+    $("rangeAll").textContent = oldest ? "All · since " + d.getDate() + " " + MON[d.getMonth()] : "All";
   }
 
   function renderChips() {
