@@ -61,6 +61,10 @@ a { color: var(--accent); }
 .menu button[aria-expanded="true"] { color: var(--ink); background: var(--panel-2); border-color: var(--line); }
 .menu .n { font-family: var(--f-mono); font-size: 12px; color: var(--accent); margin-left: 5px; }
 
+.xlink { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 8px; padding: 5px 11px; font-size: 13.5px; font-weight: 500; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.xlink:hover { border-color: var(--accent); color: var(--accent); }
+.xlink svg { width: 13px; height: 13px; fill: currentColor; flex: none; }
+
 .panel {
   position: fixed; z-index: 4; top: 76px; right: 16px; bottom: 16px; width: 390px;
   border-radius: 12px; display: flex; flex-direction: column; min-height: 0;
@@ -140,12 +144,14 @@ body.panel-open .hint { display: none; }
   .bar { top: 8px; left: 8px; right: 8px; padding: 8px 8px 6px 12px; gap: 6px 12px; }
   .brand { font-size: 21px; }
   .status { font-size: 11.5px; }
-  .menu { margin-left: 0; width: 100%; }
+  .menu { margin-left: 0; width: 100%; order: 4; }
+  .xlink { margin-left: auto; order: 2; padding: 4px 9px; font-size: 12.5px; }
+  .status { order: 3; width: 100%; }
   .menu button { flex: 1; padding: 6px 4px; font-size: 13.5px; }
   .panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; height: 58%; }
   .card { left: 8px; bottom: 8px; width: calc(100% - 16px); }
   body.panel-open .card { display: none; }
-  .zoom { left: 8px; top: 132px; transform: none; }
+  .zoom { left: 8px; top: 158px; transform: none; }
   .hint { display: none; }
 }
 </style>
@@ -162,6 +168,7 @@ body.panel-open .hint { display: none; }
     <button type="button" data-p="stats" aria-expanded="false" aria-controls="panel">Stats</button>
     <button type="button" data-p="about" aria-expanded="false" aria-controls="panel">About</button>
   </nav>
+  <a class="xlink" href="https://x.com/CyberTrackerHub" target="_blank" rel="noopener noreferrer" aria-label="Cyber Tracker on X, @CyberTrackerHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9L18.9 2Zm-1.1 18h1.7L6.4 3.8H4.5L17.8 20Z"/></svg>@CyberTrackerHub</a>
 </header>
 
 <div class="zoom glass" role="group" aria-label="Zoom">
@@ -207,6 +214,7 @@ body.panel-open .hint { display: none; }
       <p>Cyber Tracker plots newly reported cyberattacks on the globe. Each marker stands where the affected organisation is based, not where the attacker is.</p>
       <p>Everything that gets reported shows up. A solid marker with a white ring and a beam is Confirmed: the organisation itself or a news desk has confirmed the attack. A small hollow ring is Claimed: an attacker listed the victim on a leak site and nobody has verified it yet. Every incident links to where it was reported.</p>
       <p>Markers with a moving ring were reported in the last three days. New incidents appear on the globe while the page is open.</p>
+      <p>Follow <a href="https://x.com/CyberTrackerHub" target="_blank" rel="noopener noreferrer">@CyberTrackerHub on X</a> for updates.</p>
       <div><h3>Controls</h3><p>Drag to spin. Scroll or pinch to zoom. Arrow keys and + / − work when the globe has focus. Select a marker or a feed entry to fly to it.</p></div>
     </div>
   </div>
@@ -575,7 +583,7 @@ body.panel-open .hint { display: none; }
     view.cx = 0;
   }
   function frameTarget() {
-    var narrow = W <= 860, top = narrow ? 96 : 70, cx = W / 2, cy, avail;
+    var narrow = W <= 860, top = narrow ? 122 : 70, cx = W / 2, cy, avail;
     if (openPanel && !narrow) cx = (W - 406) / 2;
     if (openPanel && narrow) { avail = H * 0.42 - top; cy = top + avail / 2; }
     else { avail = H - top - (narrow ? 110 : 40); cy = top + avail / 2; }
