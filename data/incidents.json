@@ -1,5 +1,5 @@
 {
- "lastRun": 1795003179363,
+ "lastRun": 1795007412306,
  "incidents": [
   {
    "id": "2026-11-18-russian-espionage-actor-star-bli-787f3",
@@ -16,6 +16,24 @@
    "source": "Infosecurity Magazine",
    "url": "https://www.infosecurity-magazine.com/news/russian-star-blizzard-cloud-data/",
    "added": 1795003179363,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-ekwiik-eazypay-ekwiik-com",
+   "title": "PixelLeaks lists EKwiiK (EazyPay, ekwiik.com)",
+   "target": "EKwiiK (EazyPay, ekwiik.com)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Kenya",
+   "place": "",
+   "lat": -0.0,
+   "lon": 37.9,
+   "ts": 1794990698521,
+   "summary": "Listed by PixelLeaks on its leak site (sector: Financial Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RUt3aWlLIChFYXp5UGF5LCBla3dpaWsuY29tKUBQaXhlbExlYWtz",
+   "added": 1795007412306,
    "auto": true,
    "timeKnown": true
   },
