@@ -1,5 +1,5 @@
 {
- "lastRun": 1794992514372,
+ "lastRun": 1794996025573,
  "incidents": [
   {
    "id": "2026-11-18-russian-cold-relic-hackers-use-s-ee9a2",
@@ -16,6 +16,42 @@
    "source": "The Hacker News",
    "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html",
    "added": 1794984471256,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-wei-tai-leather-viet-nam-co-ltd-weitai-l",
+   "title": "PixelLeaks lists Wei Tai Leather Viet Nam Co., Ltd (weitai-leather.com)",
+   "target": "Wei Tai Leather Viet Nam Co., Ltd (weitai-leather.com)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Vietnam",
+   "place": "",
+   "lat": 16.0,
+   "lon": 107.8,
+   "ts": 1794980261792,
+   "summary": "Listed by PixelLeaks on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/V2VpIFRhaSBMZWF0aGVyIFZpZXQgTmFtIENvLiwgTHRkICh3ZWl0YWktbGVhdGhlci5jb20pQFBpeGVsTGVha3M=",
+   "added": 1794996025573,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-topgroup",
+   "title": "Aoqin lists TopGroup",
+   "target": "TopGroup",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Argentina",
+   "place": "",
+   "lat": -38.4,
+   "lon": -63.6,
+   "ts": 1794979225862,
+   "summary": "Listed by Aoqin on its leak site. Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VG9wR3JvdXBAQW9xaW4=",
+   "added": 1794996025573,
    "auto": true,
    "timeKnown": true
   },
