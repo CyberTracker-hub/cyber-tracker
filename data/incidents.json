@@ -1,6 +1,24 @@
 {
- "lastRun": 1794970303860,
+ "lastRun": 1794973287576,
  "incidents": [
+  {
+   "id": "2026-11-17-drive-medical-1-442-814-records",
+   "title": "Vortex lists Drive Medical - 1,442,814 records",
+   "target": "Drive Medical - 1,442,814 records",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1794956892087,
+   "summary": "Listed by Vortex on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RHJpdmUgTWVkaWNhbCAtIDEsNDQyLDgxNCByZWNvcmRzQFZvcnRleA==",
+   "added": 1794973287576,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-17-fugaku",
    "title": "Japan takes Fugaku supercomputer offline after cyberattack",
