@@ -1,5 +1,5 @@
 {
- "lastRun": 1795037173267,
+ "lastRun": 1795040709682,
  "incidents": [
   {
    "id": "2026-11-18-data-breach-impacts-40-irish-cre-9f639",
@@ -16,6 +16,42 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/",
    "added": 1795033763921,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-jackson-walker",
+   "title": "SilentRansomGroup lists Jackson Walker",
+   "target": "Jackson Walker",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795025465573,
+   "summary": "Listed by SilentRansomGroup on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SmFja3NvbiBXYWxrZXJAU2lsZW50UmFuc29tR3JvdXA=",
+   "added": 1795040709682,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-an-independent-asset-management-firm-in",
+   "title": "HYFLOCK lists An independent asset management firm in Casablanca",
+   "target": "An independent asset management firm in Casablanca",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Morocco",
+   "place": "",
+   "lat": 31.8,
+   "lon": -7.1,
+   "ts": 1795024296786,
+   "summary": "Listed by HYFLOCK on its leak site (sector: Financial Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QW4gaW5kZXBlbmRlbnQgYXNzZXQgbWFuYWdlbWVudCBmaXJtIGluIENhc2FibGFuY2FASFlGTE9DSw==",
+   "added": 1795040709682,
    "auto": true,
    "timeKnown": true
   },
