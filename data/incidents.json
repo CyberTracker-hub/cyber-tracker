@@ -1,6 +1,24 @@
 {
- "lastRun": 1795026190026,
+ "lastRun": 1795030434877,
  "incidents": [
+  {
+   "id": "2026-11-18-stl-international-pte-ltd",
+   "title": "Krybit lists STL International Pte Ltd",
+   "target": "STL International Pte Ltd",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Singapore",
+   "place": "",
+   "lat": 1.35,
+   "lon": 103.8,
+   "ts": 1795015148750,
+   "summary": "Listed by Krybit on its leak site (sector: Other). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U1RMIEludGVybmF0aW9uYWwgUHRlIEx0ZEBrcnliaXQ=",
+   "added": 1795030434877,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-flagship-cruises-events",
    "title": "Akira lists Flagship Cruises & Events",
