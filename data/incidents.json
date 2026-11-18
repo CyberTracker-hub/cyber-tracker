@@ -1,5 +1,5 @@
 {
- "lastRun": 1794984471256,
+ "lastRun": 1794988839135,
  "incidents": [
   {
    "id": "2026-11-18-russian-cold-relic-hackers-use-s-ee9a2",
@@ -1880,6 +1880,23 @@
    "source": "kma-online.de",
    "url": "https://www.kma-online.de/aktuelles/it-digital-health/detail/cyberangriff-auf-kreiskrankenhaus-in-greiz-56516",
    "added": 1794955568183,
+   "auto": true
+  },
+  {
+   "id": "2026-11-16-rikagaku-ara-t-rma-enstit-s-riken",
+   "title": "Dünyanın en hızlı bilgisayarına siber saldırı! Fugaku'nun faaliyetleri durduruldu",
+   "target": "Rikagaku Araştırma Enstitüsü (RIKEN)",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1794787200000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "babaocagi.com.tr",
+   "url": "https://www.babaocagi.com.tr/dunyanin-en-hizli-bilgisayarina-siber-saldiri-fugakunun-faaliyetleri-durduruldu",
+   "added": 1794988839135,
    "auto": true
   },
   {
