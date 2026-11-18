@@ -1,5 +1,5 @@
 {
- "lastRun": 1795015712972,
+ "lastRun": 1795019716478,
  "incidents": [
   {
    "id": "2026-11-18-russian-espionage-actor-star-bli-787f3",
@@ -2467,6 +2467,23 @@
    "source": "wgme.com",
    "url": "https://wgme.com/news/local/south-portland-closes-city-offices-after-cybersecurity-incident-maine",
    "added": 1794955568183,
+   "auto": true
+  },
+  {
+   "id": "2026-11-15-canton-de-basel-landschaft",
+   "title": "Kantonale Server betroffen: «Heftiger, breit angelegter Angriff»: Seit Sonntag finden Cyberattacken auf die Baselbieter IT-Struktur statt",
+   "target": "Canton de Basel-Landschaft",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Switzerland",
+   "place": "",
+   "lat": 46.8,
+   "lon": 8.2,
+   "ts": 1794700800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "bazonline.ch",
+   "url": "https://www.bazonline.ch/cyberangriff-auf-basel-landschaft-server-isoliert-736977549861",
+   "added": 1795019716478,
    "auto": true
   },
   {
