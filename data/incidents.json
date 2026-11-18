@@ -1,6 +1,24 @@
 {
- "lastRun": 1795023209160,
+ "lastRun": 1795026190026,
  "incidents": [
+  {
+   "id": "2026-11-18-flagship-cruises-events",
+   "title": "Akira lists Flagship Cruises & Events",
+   "target": "Flagship Cruises & Events",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795011065107,
+   "summary": "Listed by Akira on its leak site (sector: Hospitality). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RmxhZ3NoaXAgQ3J1aXNlcyAmIEV2ZW50c0Bha2lyYQ==",
+   "added": 1795026190026,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-jeld-wen",
    "title": "Whitearmor lists Jeld-wen",
