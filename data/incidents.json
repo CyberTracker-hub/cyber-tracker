@@ -1,6 +1,42 @@
 {
- "lastRun": 1795019716478,
+ "lastRun": 1795023209160,
  "incidents": [
+  {
+   "id": "2026-11-18-jeld-wen",
+   "title": "Whitearmor lists Jeld-wen",
+   "target": "Jeld-wen",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795007290270,
+   "summary": "Listed by Whitearmor on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SmVsZC13ZW5AV2hpdGVhcm1vcg==",
+   "added": 1795023209160,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-colombian-real-estate",
+   "title": "HYFLOCK lists Colombian Real Estate",
+   "target": "Colombian Real Estate",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Colombia",
+   "place": "",
+   "lat": 4.6,
+   "lon": -74.3,
+   "ts": 1795006295268,
+   "summary": "Listed by HYFLOCK on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q29sb21iaWFuIFJlYWwgRXN0YXRlQEhZRkxPQ0s=",
+   "added": 1795023209160,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-russian-espionage-actor-star-bli-787f3",
    "title": "Russian Espionage Actor Star Blizzard Focuses on Cloud Identities for Mass Data Theft",
