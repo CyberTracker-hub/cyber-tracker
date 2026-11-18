@@ -1,6 +1,24 @@
 {
- "lastRun": 1795030434877,
+ "lastRun": 1795033763921,
  "incidents": [
+  {
+   "id": "2026-11-18-data-breach-impacts-40-irish-cre-9f639",
+   "title": "Data breach impacts 40 Irish credit unions in reported IT provider hack",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Ireland",
+   "place": "",
+   "lat": 53.4,
+   "lon": -8.2,
+   "ts": 1795030773000,
+   "summary": "Reported by BleepingComputer. Open the report for details.",
+   "source": "BleepingComputer",
+   "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/",
+   "added": 1795033763921,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-stl-international-pte-ltd",
    "title": "Krybit lists STL International Pte Ltd",
