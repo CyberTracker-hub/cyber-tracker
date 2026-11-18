@@ -1,5 +1,5 @@
 {
- "lastRun": 1794988839135,
+ "lastRun": 1794992514372,
  "incidents": [
   {
    "id": "2026-11-18-russian-cold-relic-hackers-use-s-ee9a2",
@@ -988,6 +988,23 @@
    "url": "https://www.ransomlook.io/recent",
    "added": 0,
    "timeKnown": true
+  },
+  {
+   "id": "2026-11-17-neuried",
+   "title": "Neuried: Cyberangriff auf Gemeindeverwaltung",
+   "target": "Neuried",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1794873600000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "breisgau.live",
+   "url": "https://breisgau.live/polizeimeldungen/neuried-cyberangriff-auf-gemeindeverwaltung/",
+   "added": 1794992514372,
+   "auto": true
   },
   {
    "id": "2026-11-16-instant-access",
