@@ -1,5 +1,5 @@
 {
- "lastRun": 1795113705145,
+ "lastRun": 1795117742399,
  "incidents": [
   {
    "id": "2026-11-19-transport-for-london-breach-expo-19771",
@@ -16,6 +16,24 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data/",
    "added": 1795113705145,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-medmira-inc",
+   "title": "Deadlock lists MedMira Inc",
+   "target": "MedMira Inc",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Canada",
+   "place": "",
+   "lat": 56.1,
+   "lon": -106.3,
+   "ts": 1795099873702,
+   "summary": "Listed by Deadlock on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TWVkTWlyYSBJbmNARGVhZGxvY2s=",
+   "added": 1795117742399,
    "auto": true,
    "timeKnown": true
   },
