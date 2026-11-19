@@ -1,6 +1,24 @@
 {
- "lastRun": 1795055947007,
+ "lastRun": 1795059627317,
  "incidents": [
+  {
+   "id": "2026-11-18-terminais",
+   "title": "Medusalocker lists Terminais",
+   "target": "Terminais",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Mozambique",
+   "place": "",
+   "lat": -18.7,
+   "lon": 35.5,
+   "ts": 1795042861237,
+   "summary": "Listed by Medusalocker on its leak site (sector: Transportation). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VGVybWluYWlzQG1lZHVzYWxvY2tlcg==",
+   "added": 1795059627317,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-company-241",
    "title": "N0n lists Company #241",
