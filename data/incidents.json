@@ -1,5 +1,5 @@
 {
- "lastRun": 1795117742399,
+ "lastRun": 1795124188317,
  "incidents": [
   {
    "id": "2026-11-19-transport-for-london-breach-expo-19771",
@@ -16,6 +16,42 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data/",
    "added": 1795113705145,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-uchealth",
+   "title": "Handsome Boy Hacking Club lists UCHealth",
+   "target": "UCHealth",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795108668710,
+   "summary": "Listed by Handsome Boy Hacking Club on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VUNIZWFsdGhASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==",
+   "added": 1795124188317,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-smith-wesson",
+   "title": "Handsome Boy Hacking Club lists Smith & Wesson",
+   "target": "Smith & Wesson",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795108631704,
+   "summary": "Listed by Handsome Boy Hacking Club on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U21pdGggJiBXZXNzb25ASGFuZHNvbWUgQm95IEhhY2tpbmcgQ2x1Yg==",
+   "added": 1795124188317,
    "auto": true,
    "timeKnown": true
   },
