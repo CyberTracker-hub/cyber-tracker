@@ -1,6 +1,24 @@
 {
- "lastRun": 1795063686968,
+ "lastRun": 1795067142960,
  "incidents": [
+  {
+   "id": "2026-11-19-alumil-com",
+   "title": "Krybit lists alumil.com",
+   "target": "alumil.com",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Greece",
+   "place": "",
+   "lat": 39.1,
+   "lon": 21.8,
+   "ts": 1795049425526,
+   "summary": "Listed by Krybit on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/YWx1bWlsLmNvbUBrcnliaXQ=",
+   "added": 1795067142960,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-18-terminais",
    "title": "Medusalocker lists Terminais",
@@ -1006,6 +1024,40 @@
    "source": "wjol.com",
    "url": "https://www.wjol.com/wilmington-school-district-209u-reports-ransomware-attack-and-possible-data-breach/",
    "added": 1795037173267,
+   "auto": true
+  },
+  {
+   "id": "2026-11-18-skagerak-energi",
+   "title": "Skagerak Energi utsatt for forsøk på cyberangrep",
+   "target": "Skagerak Energi",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Norway",
+   "place": "",
+   "lat": 61.0,
+   "lon": 8.5,
+   "ts": 1794960000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "nettavisen.no",
+   "url": "https://www.nettavisen.no/nyheter/skagerak-energi-utsatt-for-forsok-pa-cyberangrep/s/30-95-26304",
+   "added": 1795067142960,
+   "auto": true
+  },
+  {
+   "id": "2026-11-18-wittenberg-net",
+   "title": "Stadtwerke bestätigen Cyberangriff auf „wittenberg-net“: Sind Kundendaten betroffen?",
+   "target": "wittenberg-net",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1794960000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "mz.de",
+   "url": "https://www.mz.de/lokal/wittenberg/stadtwerke-bestatigen-cyberangriff-auf-wittenberg-net-sind-kundendaten-betroffen-4358794",
+   "added": 1795067142960,
    "auto": true
   },
   {
