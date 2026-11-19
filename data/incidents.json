@@ -1,6 +1,24 @@
 {
- "lastRun": 1795070759255,
+ "lastRun": 1795075555069,
  "incidents": [
+  {
+   "id": "2026-11-19-www-sleepboxbymiracle-com",
+   "title": "Krybit lists www.sleepboxbymiracle.com",
+   "target": "www.sleepboxbymiracle.com",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Russia",
+   "place": "",
+   "lat": 61.5,
+   "lon": 95.0,
+   "ts": 1795060264582,
+   "summary": "Listed by Krybit on its leak site (sector: Hospitality). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/d3d3LnNsZWVwYm94YnltaXJhY2xlLmNvbUBrcnliaXQ=",
+   "added": 1795075555069,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-19-www-leadersaluminium-ae",
    "title": "Krybit lists www.leadersaluminium.ae",
