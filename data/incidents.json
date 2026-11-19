@@ -1,6 +1,24 @@
 {
- "lastRun": 1795079275037,
+ "lastRun": 1795083920866,
  "incidents": [
+  {
+   "id": "2026-11-19-rakuten-securities-breach-could-c3116",
+   "title": "Rakuten Securities Breach Could Impact 15 Million Customers",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1795080000000,
+   "summary": "Reported by Infosecurity Magazine. Open the report for details.",
+   "source": "Infosecurity Magazine",
+   "url": "https://www.infosecurity-magazine.com/news/rakuten-securities-breach-15/",
+   "added": 1795083920866,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-19-www-sleepboxbymiracle-com",
    "title": "Krybit lists www.sleepboxbymiracle.com",
