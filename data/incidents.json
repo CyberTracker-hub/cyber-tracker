@@ -1,6 +1,24 @@
 {
- "lastRun": 1795094505296,
+ "lastRun": 1795096260875,
  "incidents": [
+  {
+   "id": "2026-11-19-ukraine-exposes-ransomware-netwo-04901",
+   "title": "Ukraine exposes ransomware network extorting US oil, healthcare firms",
+   "target": "",
+   "type": "ransomware",
+   "status": "confirmed",
+   "country": "Ukraine",
+   "place": "",
+   "lat": 48.4,
+   "lon": 31.2,
+   "ts": 1795095000000,
+   "summary": "Reported by The Record. Open the report for details.",
+   "source": "The Record",
+   "url": "https://therecord.media/ukraine-ransomware-arrests-cyber",
+   "added": 1795096260875,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-19-rakuten-securities-breach-could-c3116",
    "title": "Rakuten Securities Breach Could Impact 15 Million Customers",
