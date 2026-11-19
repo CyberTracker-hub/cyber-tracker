@@ -1,5 +1,5 @@
 {
- "lastRun": 1795083920866,
+ "lastRun": 1795087597446,
  "incidents": [
   {
    "id": "2026-11-19-rakuten-securities-breach-could-c3116",
@@ -16,6 +16,24 @@
    "source": "Infosecurity Magazine",
    "url": "https://www.infosecurity-magazine.com/news/rakuten-securities-breach-15/",
    "added": 1795083920866,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-smith-green-attorneys-at-law-pllc",
+   "title": "Rhysida lists Smith & Green, Attorneys at Law PLLC",
+   "target": "Smith & Green, Attorneys at Law PLLC",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795070674639,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U21pdGggJiBHcmVlbiwgQXR0b3JuZXlzIGF0IExhdyBQTExDQHJoeXNpZGE=",
+   "added": 1795087597446,
    "auto": true,
    "timeKnown": true
   },
