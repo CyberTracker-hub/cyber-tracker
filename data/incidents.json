@@ -1,5 +1,5 @@
 {
- "lastRun": 1795091514373,
+ "lastRun": 1795094505296,
  "incidents": [
   {
    "id": "2026-11-19-rakuten-securities-breach-could-c3116",
@@ -988,6 +988,24 @@
    "source": "Ransomware.live",
    "url": "https://www.ransomware.live/id/RkFJUiBIZWFsdGgsIEluYy4gKGZhaXJoZWFsdGguY29tKUBQaXhlbExlYWtz",
    "added": 1794999799866,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-18-russian-cold-relic-hackers-use-s-ee9a2",
+   "title": "Russian COLD RELIC Hackers Use Stolen Google Workspace Data to Breach Second U.S. Organization",
+   "target": "",
+   "type": "supply",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1794981484000,
+   "summary": "Reported by The Hacker News. Open the report for details.",
+   "source": "The Hacker News",
+   "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html",
+   "added": 1795094505296,
    "auto": true,
    "timeKnown": true
   },
