@@ -149,12 +149,14 @@ SKIP_RE = re.compile(
     r"\bfine[ds]?\b|sentenced|pleads guilty|arrest(ed|s)?\b|\bindict|lawsuit|settle(s|ment)?\b|week in review|\bopinion\b|"
     r"extradit|\bcharged\b|\bprison\b|\bjail|\bsue[sd]?\b|\bcourt\b|convicted|\btrial\b|\bseized?\b|takedown|dismantl|sanction|"
     r"threat actors?|-nexus|\bapt\d*\b|\bcampaign\b|\bmalware\b|\bbotnet\b|\bexploit|\bflaw\b|\bbug\b|researchers?\b|\bstudy\b|"
-    r"\bwarns?\b|\badvisory\b|\bfirst\b|\bhow\b|\bwhy\b|\bwhat\b|\?$", re.I)
+    r"\bwarns?\b|\badvisory\b|\bfirst\b|\bhow\b|\bwhy\b|\bwhat\b|\?$|"
+    r"espionage|focus(es|ed)? on|\btargets?\b|\btargeting\b|\bnew\b.*\b(variant|technique|tool|group)\b|\btrend|\bstate of\b|\bweekly\b|\broundup\b", re.I)
 # "Russian hackers", "China-linked group": the country of the attacker, not of the victim
 ATTACKER_RE = re.compile(
     r"(pro-)?[a-z]+( korean)?[\s-](speaking|linked|backed|nexus|aligned|sponsored|based)\b|"
     r"(pro-)?(russian|chinese|iranian|north korean|belarusian|pakistani|indian|vietnamese|turkish|israeli|ukrainian)"
-    r"[\s-](state[\s-])?(hackers?|hacktivists?|groups?|gangs?|actors?|spies|apt|cyber ?spies|operatives?)", re.I)
+    r"[\s-](state[\s-])?(hackers?|hacktivists?|groups?|gangs?|actors?|spies|apt|cyber ?spies|operatives?)|"
+    r"(pro-)?(russian?|chinese|china|iranian?|north korean?|belarusian)\b(\s+[\w-]+){1,3}\s+(hackers?|hacktivists?|actors?|groups?|gangs?|spies|apt\w*)", re.I)
 
 
 def log(*a):
