@@ -1,6 +1,24 @@
 {
- "lastRun": 1795182541410,
+ "lastRun": 1795185565754,
  "incidents": [
+  {
+   "id": "2026-11-20-dozens-of-credit-unions-hit-by-s-c21f2",
+   "title": "Dozens of credit unions hit by supplier breach that went unnoticed for six weeks",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Ireland",
+   "place": "",
+   "lat": 53.4,
+   "lon": -8.2,
+   "ts": 1795184640000,
+   "summary": "Reported by The Record. Open the report for details.",
+   "source": "The Record",
+   "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
+   "added": 1795185565754,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-sbc-medical-group-data-breach-im-3827c",
    "title": "SBC Medical Group Data Breach Impacts Over 2 Million",
