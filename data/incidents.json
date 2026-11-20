@@ -1,5 +1,5 @@
 {
- "lastRun": 1795136443535,
+ "lastRun": 1795140619061,
  "incidents": [
   {
    "id": "2026-11-19-hackers-steal-data-of-1-6-millio-df29d",
@@ -16,6 +16,24 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/",
    "added": 1795127250326,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-autozone-inc",
+   "title": "Inception lists AutoZone, Inc.",
+   "target": "AutoZone, Inc.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795125169672,
+   "summary": "Listed by Inception on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QXV0b1pvbmUsIEluYy5ASW5jZXB0aW9u",
+   "added": 1795140619061,
    "auto": true,
    "timeKnown": true
   },
