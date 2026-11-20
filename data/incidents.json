@@ -1,6 +1,42 @@
 {
- "lastRun": 1795200121562,
+ "lastRun": 1795204024623,
  "incidents": [
+  {
+   "id": "2026-11-20-bell-canada-says-agentic-hacker-6c623",
+   "title": "Bell Canada says 'agentic' hacker stole enterprise customer data",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Canada",
+   "place": "",
+   "lat": 56.1,
+   "lon": -106.3,
+   "ts": 1795200703000,
+   "summary": "Reported by BleepingComputer. Open the report for details.",
+   "source": "BleepingComputer",
+   "url": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/",
+   "added": 1795204024623,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-trawell-co-s-p-a-d-b-a-safe-bag",
+   "title": "Aurora lists TraWell Co S.p.A. (d/b/a Safe Bag)",
+   "target": "TraWell Co S.p.A. (d/b/a Safe Bag)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795187628420,
+   "summary": "Listed by Aurora on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VHJhV2VsbCBDbyBTLnAuQS4gKGQvYi9hIFNhZmUgQmFnKUBhdXJvcmE=",
+   "added": 1795204024623,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-dozens-of-credit-unions-hit-by-s-c21f2",
    "title": "Dozens of credit unions hit by supplier breach that went unnoticed for six weeks",
