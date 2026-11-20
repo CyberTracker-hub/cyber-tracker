@@ -1,5 +1,5 @@
 {
- "lastRun": 1795140619061,
+ "lastRun": 1795143949983,
  "incidents": [
   {
    "id": "2026-11-19-hackers-steal-data-of-1-6-millio-df29d",
@@ -16,6 +16,24 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/",
    "added": 1795127250326,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-19-rudolph-f-jass-jr-pllc",
+   "title": "Rhysida lists Rudolph F. Jass, Jr., PLLC",
+   "target": "Rudolph F. Jass, Jr., PLLC",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795126716758,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/UnVkb2xwaCBGLiBKYXNzLCBKci4sIFBMTENAcmh5c2lkYQ==",
+   "added": 1795143949983,
    "auto": true,
    "timeKnown": true
   },
