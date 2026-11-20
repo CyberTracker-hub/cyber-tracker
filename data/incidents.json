@@ -1,6 +1,24 @@
 {
- "lastRun": 1795150803748,
+ "lastRun": 1795154638936,
  "incidents": [
+  {
+   "id": "2026-11-20-fifa-f-d-ration-internationale-de-footba",
+   "title": "Handsome Boy Hacking Club lists FIFA (Fédération Internationale de Football Association)",
+   "target": "FIFA (Fédération Internationale de Football Association)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Switzerland",
+   "place": "",
+   "lat": 46.8,
+   "lon": 8.2,
+   "ts": 1795137723955,
+   "summary": "Listed by Handsome Boy Hacking Club on its leak site (sector: Other). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RklGQSAoRsOpZMOpcmF0aW9uIEludGVybmF0aW9uYWxlIGRlIEZvb3RiYWxsIEFzc29jaWF0aW9uKUBIYW5kc29tZSBCb3kgSGFja2luZyBDbHVi",
+   "added": 1795154638936,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-19-hackers-steal-data-of-1-6-millio-df29d",
    "title": "Hackers steal data of 1.6 million SBC Medical Group customers",
