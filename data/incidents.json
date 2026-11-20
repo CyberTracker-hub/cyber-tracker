@@ -1,5 +1,5 @@
 {
- "lastRun": 1795189290150,
+ "lastRun": 1795192953226,
  "incidents": [
   {
    "id": "2026-11-20-dozens-of-credit-unions-hit-by-s-c21f2",
@@ -16,6 +16,24 @@
    "source": "The Record",
    "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
    "added": 1795185565754,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-dallas-theological-seminary",
+   "title": "Barracuda lists Dallas Theological Seminary",
+   "target": "Dallas Theological Seminary",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795175475493,
+   "summary": "Listed by Barracuda on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RGFsbGFzIFRoZW9sb2dpY2FsIFNlbWluYXJ5QEJhcnJhY3VkYQ==",
+   "added": 1795192953226,
    "auto": true,
    "timeKnown": true
   },
