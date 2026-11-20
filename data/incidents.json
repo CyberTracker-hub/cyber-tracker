@@ -1,6 +1,24 @@
 {
- "lastRun": 1795163536933,
+ "lastRun": 1795167193420,
  "incidents": [
+  {
+   "id": "2026-11-20-eni-it",
+   "title": "Incransom lists eni.it",
+   "target": "eni.it",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795149742567,
+   "summary": "Listed by Incransom on its leak site (sector: Energy & Utilities). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/ZW5pLml0QGluY3JhbnNvbQ==",
+   "added": 1795167193420,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-inlandboatmen-s-union-of-the-pacific-mar",
    "title": "Spacebears lists Inlandboatmen’s Union of the Pacific — Marine Division of the ILWU",
