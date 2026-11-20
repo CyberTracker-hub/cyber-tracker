@@ -1,5 +1,5 @@
 {
- "lastRun": 1795213349348,
+ "lastRun": 1795216917729,
  "incidents": [
   {
    "id": "2026-11-20-bell-canada-says-agentic-hacker-6c623",
@@ -16,6 +16,42 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/",
    "added": 1795204024623,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-calvatis-gmbh",
+   "title": "Aurora lists Calvatis GmbH",
+   "target": "Calvatis GmbH",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795200473190,
+   "summary": "Listed by Aurora on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q2FsdmF0aXMgR21iSEBhdXJvcmE=",
+   "added": 1795216917729,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-jones-walker",
+   "title": "SilentRansomGroup lists Jones Walker",
+   "target": "Jones Walker",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795198229260,
+   "summary": "Listed by SilentRansomGroup on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Sm9uZXMgV2Fsa2VyQFNpbGVudFJhbnNvbUdyb3Vw",
+   "added": 1795216917729,
    "auto": true,
    "timeKnown": true
   },
