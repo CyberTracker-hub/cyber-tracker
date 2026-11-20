@@ -1,6 +1,24 @@
 {
- "lastRun": 1795167193420,
+ "lastRun": 1795170773256,
  "incidents": [
+  {
+   "id": "2026-11-20-wakao-co-jp",
+   "title": "Blackout lists wakao.co.jp",
+   "target": "wakao.co.jp",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1795152929384,
+   "summary": "Listed by Blackout on its leak site (sector: Other). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/d2FrYW8uY28uanBAYmxhY2tvdXQ=",
+   "added": 1795170773256,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-eni-it",
    "title": "Incransom lists eni.it",
