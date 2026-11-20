@@ -1,6 +1,24 @@
 {
- "lastRun": 1795174119470,
+ "lastRun": 1795177858368,
  "incidents": [
+  {
+   "id": "2026-11-20-sbc-medical-group-data-breach-im-3827c",
+   "title": "SBC Medical Group Data Breach Impacts Over 2 Million",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1795174611000,
+   "summary": "Reported by SecurityWeek. Open the report for details.",
+   "source": "SecurityWeek",
+   "url": "https://www.securityweek.com/sbc-medical-group-data-breach-impacts-over-2-million/",
+   "added": 1795177858368,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-wakao-co-jp",
    "title": "Blackout lists wakao.co.jp",
