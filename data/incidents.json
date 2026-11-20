@@ -1,5 +1,5 @@
 {
- "lastRun": 1795196569146,
+ "lastRun": 1795200121562,
  "incidents": [
   {
    "id": "2026-11-20-dozens-of-credit-unions-hit-by-s-c21f2",
@@ -16,6 +16,24 @@
    "source": "The Record",
    "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
    "added": 1795185565754,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-william-cook-holdings-limited",
+   "title": "Aurora lists William Cook Holdings Limited",
+   "target": "William Cook Holdings Limited",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United Kingdom",
+   "place": "",
+   "lat": 54.0,
+   "lon": -2.0,
+   "ts": 1795184255748,
+   "summary": "Listed by Aurora on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/V2lsbGlhbSBDb29rIEhvbGRpbmdzIExpbWl0ZWRAYXVyb3Jh",
+   "added": 1795200121562,
    "auto": true,
    "timeKnown": true
   },
