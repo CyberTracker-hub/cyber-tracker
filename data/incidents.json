@@ -1,5 +1,5 @@
 {
- "lastRun": 1795192953226,
+ "lastRun": 1795196569146,
  "incidents": [
   {
    "id": "2026-11-20-dozens-of-credit-unions-hit-by-s-c21f2",
@@ -16,6 +16,24 @@
    "source": "The Record",
    "url": "https://therecord.media/dozens-of-credit-unions-hit-by-supplier-breach",
    "added": 1795185565754,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-20-pecora",
+   "title": "Akira lists Pecora",
+   "target": "Pecora",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795180798215,
+   "summary": "Listed by Akira on its leak site (sector: Other). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/UGVjb3JhQGFraXJh",
+   "added": 1795196569146,
    "auto": true,
    "timeKnown": true
   },
