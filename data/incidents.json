@@ -1,6 +1,24 @@
 {
- "lastRun": 1795252822116,
+ "lastRun": 1795259166795,
  "incidents": [
+  {
+   "id": "2026-11-21-realta-technologies",
+   "title": "Eclipse lists Realta Technologies",
+   "target": "Realta Technologies",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Ireland",
+   "place": "",
+   "lat": 53.4,
+   "lon": -8.2,
+   "ts": 1795243874122,
+   "summary": "Listed by Eclipse on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/UmVhbHRhIFRlY2hub2xvZ2llc0BFY2xpcHNl",
+   "added": 1795259166795,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-lucid-motors",
    "title": "Inception lists Lucid Motors",
