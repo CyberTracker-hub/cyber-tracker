@@ -1,6 +1,42 @@
 {
- "lastRun": 1795268139702,
+ "lastRun": 1795271202740,
  "incidents": [
+  {
+   "id": "2026-11-21-id-porten-har-problemer-etter-da-7731d",
+   "title": "ID-porten har problemer etter dataangrep",
+   "target": "",
+   "type": "ddos",
+   "status": "confirmed",
+   "country": "Norway",
+   "place": "",
+   "lat": 61.0,
+   "lon": 8.5,
+   "ts": 1795268846000,
+   "summary": "Reported by NRK. Open the report for details.",
+   "source": "NRK",
+   "url": "https://www.nrk.no/nyheter/id-porten-har-problemer-etter-dataangrep-1.18086360",
+   "added": 1795271202740,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-21-id-porten-har-problemer-rsaken-e-aaad8",
+   "title": "ID-porten har problemer: – Årsaken er et DDoS-angrep",
+   "target": "",
+   "type": "ddos",
+   "status": "confirmed",
+   "country": "Norway",
+   "place": "",
+   "lat": 61.0,
+   "lon": 8.5,
+   "ts": 1795268618000,
+   "summary": "Reported by VG. Open the report for details.",
+   "source": "VG",
+   "url": "https://www.vg.no/nyheter/i/0vnlxE/id-porten-er-nede-aarsaken-er-et-ddos-angrep?utm_medium=rss",
+   "added": 1795271202740,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-dallas-fort-worth-fertility-associates",
    "title": "Barracuda lists Dallas Fort Worth Fertility Associates",
