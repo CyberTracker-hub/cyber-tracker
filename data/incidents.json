@@ -1,6 +1,24 @@
 {
- "lastRun": 1795282083614,
+ "lastRun": 1795288309776,
  "incidents": [
+  {
+   "id": "2026-11-21-cyberattack-on-austrian-foreign-a4f71",
+   "title": "Cyberattack on Austrian Foreign Ministry Exposes Diplomatic Staff Data",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Austria",
+   "place": "",
+   "lat": 47.5,
+   "lon": 14.6,
+   "ts": 1795285372000,
+   "summary": "Reported by Security Affairs. Open the report for details.",
+   "source": "Security Affairs",
+   "url": "https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html",
+   "added": 1795288309776,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-id-porten-har-problemer-etter-da-7731d",
    "title": "ID-porten har problemer etter dataangrep",
