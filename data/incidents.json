@@ -1,6 +1,24 @@
 {
- "lastRun": 1795241578733,
+ "lastRun": 1795246426064,
  "incidents": [
+  {
+   "id": "2026-11-21-lucid-motors",
+   "title": "Inception lists Lucid Motors",
+   "target": "Lucid Motors",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795229513714,
+   "summary": "Listed by Inception on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/THVjaWQgTW90b3JzQEluY2VwdGlvbg==",
+   "added": 1795246426064,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-drop-1-casanare-pajonal-putumayo-and-uru",
    "title": "Whitearmor lists DROP 1 — CASANARE, PAJONAL, PUTUMAYO AND URUS — 8,000 PATIENTS, 4,000 INVOICES, ",
