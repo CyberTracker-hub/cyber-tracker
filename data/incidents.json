@@ -1,6 +1,24 @@
 {
- "lastRun": 1795259166795,
+ "lastRun": 1795261728741,
  "incidents": [
+  {
+   "id": "2026-11-21-law-office-of-ronald-d-weiss-p-c",
+   "title": "Pear lists Law Office of Ronald D. Weiss, P.C",
+   "target": "Law Office of Ronald D. Weiss, P.C",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795245994082,
+   "summary": "Listed by Pear on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TGF3IE9mZmljZSBvZiBSb25hbGQgRC4gV2Vpc3MsIFAuQ0BwZWFy",
+   "added": 1795261728741,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-realta-technologies",
    "title": "Eclipse lists Realta Technologies",
