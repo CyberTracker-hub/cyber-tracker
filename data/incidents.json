@@ -1,6 +1,24 @@
 {
- "lastRun": 1795261728741,
+ "lastRun": 1795264329629,
  "incidents": [
+  {
+   "id": "2026-11-21-dallas-fort-worth-fertility-associates",
+   "title": "Barracuda lists Dallas Fort Worth Fertility Associates",
+   "target": "Dallas Fort Worth Fertility Associates",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795247750636,
+   "summary": "Listed by Barracuda on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RGFsbGFzIEZvcnQgV29ydGggRmVydGlsaXR5IEFzc29jaWF0ZXNAQmFycmFjdWRh",
+   "added": 1795264329629,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-law-office-of-ronald-d-weiss-p-c",
    "title": "Pear lists Law Office of Ronald D. Weiss, P.C",
