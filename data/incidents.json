@@ -1,6 +1,24 @@
 {
- "lastRun": 1795231324971,
+ "lastRun": 1795234678144,
  "incidents": [
+  {
+   "id": "2026-11-20-drop-1-casanare-pajonal-putumayo-and-uru",
+   "title": "Whitearmor lists DROP 1 — CASANARE, PAJONAL, PUTUMAYO AND URUS — 8,000 PATIENTS, 4,000 INVOICES, ",
+   "target": "DROP 1 — CASANARE, PAJONAL, PUTUMAYO AND URUS — 8,000 PATIENTS, 4,000 INVOICES, ",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Colombia",
+   "place": "",
+   "lat": 4.6,
+   "lon": -74.3,
+   "ts": 1795218877944,
+   "summary": "Listed by Whitearmor on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RFJPUCAxIOKAlCBDQVNBTkFSRSwgUEFKT05BTCwgUFVUVU1BWU8gQU5EIFVSVVMg4oCUIDgsMDAwIFBBVElFTlRTLCA0LDAwMCBJTlZPSUNFUywgNyw3MzMgQ1JFRC4uLkBXaGl0ZWFybW9y",
+   "added": 1795234678144,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-aixia-group-ab-nasdaq-listed-ai-it-swede",
    "title": "PixelLeaks lists Aixia Group AB (Nasdaq-listed AI/IT, Sweden)",
