@@ -1,6 +1,24 @@
 {
- "lastRun": 1795216917729,
+ "lastRun": 1795219724994,
  "incidents": [
+  {
+   "id": "2026-11-20-bk-law-group-llc",
+   "title": "Rhysida lists BK Law Group LLC",
+   "target": "BK Law Group LLC",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795203055914,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QksgTGF3IEdyb3VwIExMQ0ByaHlzaWRh",
+   "added": 1795219724994,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-20-bell-canada-says-agentic-hacker-6c623",
    "title": "Bell Canada says 'agentic' hacker stole enterprise customer data",
