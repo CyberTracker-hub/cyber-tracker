@@ -1,5 +1,5 @@
 {
- "lastRun": 1795291227900,
+ "lastRun": 1795296266858,
  "incidents": [
   {
    "id": "2026-11-21-cyberattack-on-austrian-foreign-a4f71",
@@ -16,6 +16,24 @@
    "source": "Security Affairs",
    "url": "https://securityaffairs.com/203680/hacking/cyberattack-on-austrian-foreign-ministry-exposes-diplomatic-staff-data.html",
    "added": 1795288309776,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-21-regions-behavioral-hospital",
+   "title": "Incransom lists Regions Behavioral Hospital",
+   "target": "Regions Behavioral Hospital",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795281646157,
+   "summary": "Listed by Incransom on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/UmVnaW9ucyBCZWhhdmlvcmFsIEhvc3BpdGFsQGluY3JhbnNvbQ==",
+   "added": 1795296266858,
    "auto": true,
    "timeKnown": true
   },
