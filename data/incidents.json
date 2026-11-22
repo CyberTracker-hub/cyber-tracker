@@ -1,6 +1,24 @@
 {
- "lastRun": 1795348819404,
+ "lastRun": 1795355097045,
  "incidents": [
+  {
+   "id": "2026-11-22-uca-general-insurance-services-inc",
+   "title": "EndZone lists UCA General Insurance Services, Inc",
+   "target": "UCA General Insurance Services, Inc",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Philippines",
+   "place": "",
+   "lat": 12.9,
+   "lon": 121.8,
+   "ts": 1795339288059,
+   "summary": "Listed by EndZone on its leak site (sector: Financial Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VUNBIEdlbmVyYWwgSW5zdXJhbmNlIFNlcnZpY2VzLCBJbmNARW5kWm9uZQ==",
+   "added": 1795355097045,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-22-data-breach-at-o-m-university-in-the-dom",
    "title": "HYFLOCK lists Data Breach at O&M University in the Dominican Republic",
