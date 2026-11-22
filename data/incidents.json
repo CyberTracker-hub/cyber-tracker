@@ -1,6 +1,24 @@
 {
- "lastRun": 1795386490754,
+ "lastRun": 1795391953144,
  "incidents": [
+  {
+   "id": "2026-11-22-viapan-group",
+   "title": "Qilin lists Viapan Group",
+   "target": "Viapan Group",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Hungary",
+   "place": "",
+   "lat": 47.2,
+   "lon": 19.5,
+   "ts": 1795376168022,
+   "summary": "Listed by Qilin on its leak site (sector: Other). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VmlhcGFuIEdyb3VwQHFpbGlu",
+   "added": 1795391953144,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-22-samsung-group-1tb-data-breach-from-ranso",
    "title": "HYFLOCK lists Samsung Group: 1TB Data Breach from Ransomware Attack",
