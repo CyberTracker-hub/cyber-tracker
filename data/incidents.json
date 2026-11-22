@@ -1,6 +1,42 @@
 {
- "lastRun": 1795355097045,
+ "lastRun": 1795361031492,
  "incidents": [
+  {
+   "id": "2026-11-22-law-offices-of-cynthia-a-de-petris",
+   "title": "Rhysida lists Law Offices of Cynthia A. de Petris",
+   "target": "Law Offices of Cynthia A. de Petris",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795344219747,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TGF3IE9mZmljZXMgb2YgQ3ludGhpYSBBLiBkZSBQZXRyaXNAcmh5c2lkYQ==",
+   "added": 1795361031492,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-22-a-ransomware-attack-on-a-company-ranked",
+   "title": "HYFLOCK lists A Ransomware Attack on a Company Ranked Among the Top 30 in the Fortune 500",
+   "target": "A Ransomware Attack on a Company Ranked Among the Top 30 in the Fortune 500",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795339341438,
+   "summary": "Listed by HYFLOCK on its leak site. Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QSBSYW5zb213YXJlIEF0dGFjayBvbiBhIENvbXBhbnkgUmFua2VkIEFtb25nIHRoZSBUb3AgMzAgaW4gdGhlIEZvcnR1bmUgNTAwQEhZRkxPQ0s=",
+   "added": 1795361031492,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-22-uca-general-insurance-services-inc",
    "title": "EndZone lists UCA General Insurance Services, Inc",
