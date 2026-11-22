@@ -1,6 +1,42 @@
 {
- "lastRun": 1795346365402,
+ "lastRun": 1795348819404,
  "incidents": [
+  {
+   "id": "2026-11-22-data-breach-at-o-m-university-in-the-dom",
+   "title": "HYFLOCK lists Data Breach at O&M University in the Dominican Republic",
+   "target": "Data Breach at O&M University in the Dominican Republic",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Dominican Republic",
+   "place": "",
+   "lat": 18.7,
+   "lon": -70.2,
+   "ts": 1795332124482,
+   "summary": "Listed by HYFLOCK on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RGF0YSBCcmVhY2ggYXQgTyZNIFVuaXZlcnNpdHkgaW4gdGhlIERvbWluaWNhbiBSZXB1YmxpY0BIWUZMT0NL",
+   "added": 1795348819404,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-22-invicta-watch-group",
+   "title": "Qilin lists Invicta Watch Group",
+   "target": "Invicta Watch Group",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795331624496,
+   "summary": "Listed by Qilin on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SW52aWN0YSBXYXRjaCBHcm91cEBxaWxpbg==",
+   "added": 1795348819404,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-21-tiic-com-ph",
    "title": "Safepay lists tiic.com.ph",
