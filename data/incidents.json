@@ -1,6 +1,24 @@
 {
- "lastRun": 1795369591090,
+ "lastRun": 1795371939623,
  "incidents": [
+  {
+   "id": "2026-11-22-samsung-group-1tb-data-breach-from-ranso",
+   "title": "HYFLOCK lists Samsung Group: 1TB Data Breach from Ransomware Attack",
+   "target": "Samsung Group: 1TB Data Breach from Ransomware Attack",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "South Korea",
+   "place": "",
+   "lat": 36.5,
+   "lon": 127.8,
+   "ts": 1795355545496,
+   "summary": "Listed by HYFLOCK on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U2Ftc3VuZyBHcm91cDogMVRCIERhdGEgQnJlYWNoIGZyb20gUmFuc29td2FyZSBBdHRhY2tASFlGTE9DSw==",
+   "added": 1795371939623,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-22-law-offices-of-cynthia-a-de-petris",
    "title": "Rhysida lists Law Offices of Cynthia A. de Petris",
