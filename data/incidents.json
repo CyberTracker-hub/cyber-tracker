@@ -1,6 +1,24 @@
 {
- "lastRun": 1795472796228,
+ "lastRun": 1795476352863,
  "incidents": [
+  {
+   "id": "2026-11-24-hackers-breach-austrian-foreign-5e420",
+   "title": "Hackers breach Austrian Foreign Ministry website, access diplomats' contact details",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Austria",
+   "place": "",
+   "lat": 47.5,
+   "lon": 14.6,
+   "ts": 1795478400000,
+   "summary": "Reported by The Record. Open the report for details.",
+   "source": "The Record",
+   "url": "https://therecord.media/austrian-foreign-ministry-says-website-hacked",
+   "added": 1795476352863,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-23-south-korea-s-power-giant-kepco-f1397",
    "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
