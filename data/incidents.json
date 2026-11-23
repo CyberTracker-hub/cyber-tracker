@@ -1,6 +1,24 @@
 {
- "lastRun": 1795466132984,
+ "lastRun": 1795469303051,
  "incidents": [
+  {
+   "id": "2026-11-23-south-korea-s-power-giant-kepco-f1397",
+   "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "South Korea",
+   "place": "",
+   "lat": 36.5,
+   "lon": 127.8,
+   "ts": 1795467291000,
+   "summary": "Reported by BleepingComputer. Open the report for details.",
+   "source": "BleepingComputer",
+   "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/",
+   "added": 1795469303051,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-23-spanish-laliga-confirms-hackers-f714b",
    "title": "Spanish LaLiga confirms hackers stole soccer fans’ personal data",
@@ -34,6 +52,24 @@
    "source": "The Record",
    "url": "https://therecord.media/fbi-cyberattack-data-breach",
    "added": 1795459202003,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-saurer-intelligent-technology-co",
+   "title": "Aurora lists Saurer Intelligent Technology Co.",
+   "target": "Saurer Intelligent Technology Co.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "China",
+   "place": "",
+   "lat": 35.9,
+   "lon": 104.2,
+   "ts": 1795453494667,
+   "summary": "Listed by Aurora on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U2F1cmVyIEludGVsbGlnZW50IFRlY2hub2xvZ3kgQ28uQGF1cm9yYQ==",
+   "added": 1795469303051,
    "auto": true,
    "timeKnown": true
   },
