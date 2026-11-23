@@ -1,6 +1,42 @@
 {
- "lastRun": 1795403994478,
+ "lastRun": 1795408470226,
  "incidents": [
+  {
+   "id": "2026-11-22-lee-health-lee-memorial-health-system-pa",
+   "title": "Medusalocker lists Lee Health (Lee Memorial Health System) - partner clinic",
+   "target": "Lee Health (Lee Memorial Health System) - partner clinic",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795389850654,
+   "summary": "Listed by Medusalocker on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TGVlIEhlYWx0aCAoTGVlIE1lbW9yaWFsIEhlYWx0aCBTeXN0ZW0pIC0gcGFydG5lciBjbGluaWNAbWVkdXNhbG9ja2Vy",
+   "added": 1795408470226,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-22-chu-bordeaux-fr",
+   "title": "Scarlettgroup lists chu-bordeaux.fr",
+   "target": "chu-bordeaux.fr",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "France",
+   "place": "",
+   "lat": 46.6,
+   "lon": 2.3,
+   "ts": 1795388944650,
+   "summary": "Listed by Scarlettgroup on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Y2h1LWJvcmRlYXV4LmZyQFNjYXJsZXR0Z3JvdXA=",
+   "added": 1795408470226,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-22-agenzia-agor-societ-cooperativa-sociale",
    "title": "Panzer lists Agenzia Agorà Società Cooperativa Sociale",
