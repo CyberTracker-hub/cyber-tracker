@@ -1,5 +1,5 @@
 {
- "lastRun": 1795436238943,
+ "lastRun": 1795441420896,
  "incidents": [
   {
    "id": "2026-11-23-l-psk-ki-verkt-y-brukes-til-utf-c1961",
@@ -1882,6 +1882,23 @@
    "source": "edition.cnn.com",
    "url": "https://edition.cnn.com/2026/11/20/politics/fbi-hacked-again-target-crime-database",
    "added": 1795427727206,
+   "auto": true
+  },
+  {
+   "id": "2026-11-20-banque-delubac-cie",
+   "title": "La Banque Delubac & Cie a maîtrisé une intrusion informatique",
+   "target": "Banque Delubac & Cie",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "France",
+   "place": "",
+   "lat": 46.6,
+   "lon": 2.3,
+   "ts": 1795132800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "boursier.com",
+   "url": "https://www.boursier.com/opcvm/actualites/generales/la-banque-delubac-cie-a-maitrise-une-intrusion-informatique-998678.html",
+   "added": 1795441420896,
    "auto": true
   },
   {
