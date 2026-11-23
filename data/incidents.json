@@ -1,5 +1,5 @@
 {
- "lastRun": 1795448907495,
+ "lastRun": 1795452115381,
  "incidents": [
   {
    "id": "2026-11-23-n-nytt-dataangrep-mot-id-porten-2eae5",
@@ -34,6 +34,24 @@
    "source": "VG",
    "url": "https://www.vg.no/nyheter/i/Pv9J00/nytt-dataangrep-mot-id-porten-ustabilitet-i-tjenesten?utm_medium=rss",
    "added": 1795445224929,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-obriengroupaustralia-com-au",
+   "title": "Lockbit5 lists obriengroupaustralia.com.au",
+   "target": "obriengroupaustralia.com.au",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Australia",
+   "place": "",
+   "lat": -25.3,
+   "lon": 133.8,
+   "ts": 1795436333492,
+   "summary": "Listed by Lockbit5 on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/b2JyaWVuZ3JvdXBhdXN0cmFsaWEuY29tLmF1QGxvY2tiaXQ1",
+   "added": 1795452115381,
    "auto": true,
    "timeKnown": true
   },
