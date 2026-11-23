@@ -1,5 +1,5 @@
 {
- "lastRun": 1795463352569,
+ "lastRun": 1795466132984,
  "incidents": [
   {
    "id": "2026-11-23-spanish-laliga-confirms-hackers-f714b",
@@ -34,6 +34,24 @@
    "source": "The Record",
    "url": "https://therecord.media/fbi-cyberattack-data-breach",
    "added": 1795459202003,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-lowell-foods",
+   "title": "Incransom lists Lowell Foods",
+   "target": "Lowell Foods",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795450308234,
+   "summary": "Listed by Incransom on its leak site (sector: Agriculture and Food Production). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TG93ZWxsIEZvb2RzQGluY3JhbnNvbQ==",
+   "added": 1795466132984,
    "auto": true,
    "timeKnown": true
   },
