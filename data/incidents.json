@@ -1,5 +1,5 @@
 {
- "lastRun": 1795469303051,
+ "lastRun": 1795472796228,
  "incidents": [
   {
    "id": "2026-11-23-south-korea-s-power-giant-kepco-f1397",
@@ -52,6 +52,24 @@
    "source": "The Record",
    "url": "https://therecord.media/fbi-cyberattack-data-breach",
    "added": 1795459202003,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-kopron-s-p-a",
+   "title": "Aurora lists Kopron S.p.A.",
+   "target": "Kopron S.p.A.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795456795988,
+   "summary": "Listed by Aurora on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/S29wcm9uIFMucC5BLkBhdXJvcmE=",
+   "added": 1795472796228,
    "auto": true,
    "timeKnown": true
   },
