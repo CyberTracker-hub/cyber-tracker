@@ -1,5 +1,5 @@
 {
- "lastRun": 1795528354677,
+ "lastRun": 1795532355040,
  "incidents": [
   {
    "id": "2026-11-24-mcdonald-s-japan-discloses-breac-17fae",
@@ -234,6 +234,40 @@
    "added": 1795516217860,
    "auto": true,
    "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-allied-media",
+   "title": "Newspapers delayed as Allied Media hit by cyber attack",
+   "target": "Allied Media",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "New Zealand",
+   "place": "",
+   "lat": -41.5,
+   "lon": 172.5,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "rnz.co.nz",
+   "url": "https://www.rnz.co.nz/news/business_media/2762284/newspapers-delayed-as-allied-media-hit-by-cyber-attack",
+   "added": 1795532355040,
+   "auto": true
+  },
+  {
+   "id": "2026-11-24-tv9-telugu",
+   "title": "Cyber Attack On Media House, But… | Cyber Attack On Media House, But…",
+   "target": "TV9 Telugu",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "India",
+   "place": "",
+   "lat": 20.6,
+   "lon": 79.0,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "english.tupaki.com",
+   "url": "https://english.tupaki.com/entertainment/cyber-attack-disrupts-telugu-media-house-1516593",
+   "added": 1795532355040,
+   "auto": true
   },
   {
    "id": "2026-11-23-nationwide-it-services-inc",
