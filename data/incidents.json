@@ -1,5 +1,5 @@
 {
- "lastRun": 1795476352863,
+ "lastRun": 1795479800974,
  "incidents": [
   {
    "id": "2026-11-24-hackers-breach-austrian-foreign-5e420",
@@ -34,6 +34,24 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/",
    "added": 1795469303051,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-golden-state-baptist-college",
+   "title": "Dark Project lists Golden State Baptist College",
+   "target": "Golden State Baptist College",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795463474107,
+   "summary": "Listed by Dark Project on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/R29sZGVuIFN0YXRlIEJhcHRpc3QgQ29sbGVnZUBEYXJrIFByb2plY3Q=",
+   "added": 1795479800974,
    "auto": true,
    "timeKnown": true
   },
