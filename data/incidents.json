@@ -1,5 +1,5 @@
 {
- "lastRun": 1795519616413,
+ "lastRun": 1795523611569,
  "incidents": [
   {
    "id": "2026-11-24-globetopper-faces-up-to-2-5-mill-8f5a5",
@@ -16,6 +16,24 @@
    "source": "Help Net Security",
    "url": "https://www.helpnetsecurity.com/2026/11/24/globetopper-breach-gift-cards/",
    "added": 1795516217860,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-coneco-engineers-scientists",
+   "title": "Aoqin lists Coneco Engineers & Scientists",
+   "target": "Coneco Engineers & Scientists",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795506630375,
+   "summary": "Listed by Aoqin on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q29uZWNvIEVuZ2luZWVycyAmIFNjaWVudGlzdHNAQW9xaW4=",
+   "added": 1795523611569,
    "auto": true,
    "timeKnown": true
   },
