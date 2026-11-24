@@ -1,6 +1,24 @@
 {
- "lastRun": 1795523611569,
+ "lastRun": 1795528354677,
  "incidents": [
+  {
+   "id": "2026-11-24-mcdonald-s-japan-discloses-breac-17fae",
+   "title": "McDonald’s Japan discloses breach exposing customer purchase and location data",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1795525200000,
+   "summary": "Reported by The Record. Open the report for details.",
+   "source": "The Record",
+   "url": "https://therecord.media/japan-mcdonalds-cyberattack-breach",
+   "added": 1795528354677,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-globetopper-faces-up-to-2-5-mill-8f5a5",
    "title": "GlobeTopper faces up to $2.5 million in lost revenue after hackers steal $70,000 in gift cards",
@@ -16,6 +34,24 @@
    "source": "Help Net Security",
    "url": "https://www.helpnetsecurity.com/2026/11/24/globetopper-breach-gift-cards/",
    "added": 1795516217860,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-mayerhofer-hoch-tief-und-ingenieurbau-gm",
+   "title": "Qilin lists Mayerhofer Hoch-, Tief- und Ingenieurbau GmbH",
+   "target": "Mayerhofer Hoch-, Tief- und Ingenieurbau GmbH",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795509590868,
+   "summary": "Listed by Qilin on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TWF5ZXJob2ZlciBIb2NoLSwgVGllZi0gdW5kIEluZ2VuaWV1cmJhdSBHbWJIQHFpbGlu",
+   "added": 1795528354677,
    "auto": true,
    "timeKnown": true
   },
