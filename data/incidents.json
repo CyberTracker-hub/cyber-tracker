@@ -1,5 +1,5 @@
 {
- "lastRun": 1795485096687,
+ "lastRun": 1795491791490,
  "incidents": [
   {
    "id": "2026-11-24-hackers-breach-austrian-foreign-5e420",
@@ -16,6 +16,42 @@
    "source": "The Record",
    "url": "https://therecord.media/austrian-foreign-ministry-says-website-hacked",
    "added": 1795476352863,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-nationwide-it-services-inc",
+   "title": "Rhysida lists Nationwide IT Services, Inc.",
+   "target": "Nationwide IT Services, Inc.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795476221837,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TmF0aW9ud2lkZSBJVCBTZXJ2aWNlcywgSW5jLkByaHlzaWRh",
+   "added": 1795491791490,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-yahoo",
+   "title": "Medusalocker lists Yahoo",
+   "target": "Yahoo",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Brazil",
+   "place": "",
+   "lat": -14.2,
+   "lon": -51.9,
+   "ts": 1795476080950,
+   "summary": "Listed by Medusalocker on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/WWFob29AbWVkdXNhbG9ja2Vy",
+   "added": 1795491791490,
    "auto": true,
    "timeKnown": true
   },
