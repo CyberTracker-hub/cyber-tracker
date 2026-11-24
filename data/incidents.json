@@ -1,5 +1,5 @@
 {
- "lastRun": 1795507938789,
+ "lastRun": 1795512685550,
  "incidents": [
   {
    "id": "2026-11-24-knox-edu",
@@ -1152,6 +1152,23 @@
    "added": 1795422998506,
    "auto": true,
    "timeKnown": true
+  },
+  {
+   "id": "2026-11-23-ag-ncia-para-a-energia-adene",
+   "title": "ADENE sofre ataque informático e Portal do Sistema de Certificação Energética está temporariamente indisponível | Jornal Económico",
+   "target": "Agência para a Energia (ADENE)",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Puerto Rico",
+   "place": "",
+   "lat": 18.2,
+   "lon": -66.6,
+   "ts": 1795392000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "jornaleconomico.sapo.pt",
+   "url": "https://jornaleconomico.sapo.pt/noticias/adene-sofre-ataque-informatico-e-portal-do-sistema-de-certificacao-energetica-esta-temporariamente-indisponivel/",
+   "added": 1795512685550,
+   "auto": true
   },
   {
    "id": "2026-11-22-lee-health-lee-memorial-health-system-pa",
