@@ -1,6 +1,42 @@
 {
- "lastRun": 1795502694685,
+ "lastRun": 1795507938789,
  "incidents": [
+  {
+   "id": "2026-11-24-knox-edu",
+   "title": "Scarlettgroup lists knox.edu",
+   "target": "knox.edu",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795492767809,
+   "summary": "Listed by Scarlettgroup on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/a25veC5lZHVAU2NhcmxldHRncm91cA==",
+   "added": 1795507938789,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-a-government-website-for-a-county-in-a-u",
+   "title": "SoulGroup lists A government website for a county in a U.S. state",
+   "target": "A government website for a county in a U.S. state",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795489005833,
+   "summary": "Listed by SoulGroup on its leak site (sector: Government & Defense). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QSBnb3Zlcm5tZW50IHdlYnNpdGUgZm9yIGEgY291bnR5IGluIGEgVS5TLiBzdGF0ZUBTb3VsR3JvdXA=",
+   "added": 1795507938789,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-vhv-company",
    "title": "Anubis lists VHV Company",
