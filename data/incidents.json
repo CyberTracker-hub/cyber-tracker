@@ -1,5 +1,5 @@
 {
- "lastRun": 1795532355040,
+ "lastRun": 1795536548659,
  "incidents": [
   {
    "id": "2026-11-24-mcdonald-s-japan-discloses-breac-17fae",
@@ -16,6 +16,24 @@
    "source": "The Record",
    "url": "https://therecord.media/japan-mcdonalds-cyberattack-breach",
    "added": 1795528354677,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-fiwealth-com",
+   "title": "Incransom lists fiwealth.com",
+   "target": "fiwealth.com",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795520356659,
+   "summary": "Listed by Incransom on its leak site (sector: Financial Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Zml3ZWFsdGguY29tQGluY3JhbnNvbQ==",
+   "added": 1795536548659,
    "auto": true,
    "timeKnown": true
   },
