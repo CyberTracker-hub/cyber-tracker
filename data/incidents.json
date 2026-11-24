@@ -1,6 +1,42 @@
 {
- "lastRun": 1795491791490,
+ "lastRun": 1795495822211,
  "incidents": [
+  {
+   "id": "2026-11-24-vhv-company",
+   "title": "Anubis lists VHV Company",
+   "target": "VHV Company",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795478614846,
+   "summary": "Listed by Anubis on its leak site. Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VkhWIENvbXBhbnlAYW51Ymlz",
+   "added": 1795495822211,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-24-home-instead",
+   "title": "Anubis lists Home Instead",
+   "target": "Home Instead",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795478549052,
+   "summary": "Listed by Anubis on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SG9tZSBJbnN0ZWFkQGFudWJpcw==",
+   "added": 1795495822211,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-hackers-breach-austrian-foreign-5e420",
    "title": "Hackers breach Austrian Foreign Ministry website, access diplomats' contact details",
