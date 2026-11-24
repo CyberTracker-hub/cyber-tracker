@@ -1,6 +1,24 @@
 {
- "lastRun": 1795551955220,
+ "lastRun": 1795555748760,
  "incidents": [
+  {
+   "id": "2026-11-24-whi-holdings-works-human-intelligence",
+   "title": "Incransom lists WHI Holdings / Works Human Intelligence",
+   "target": "WHI Holdings / Works Human Intelligence",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795540218491,
+   "summary": "Listed by Incransom on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/V0hJIEhvbGRpbmdzIC8gV29ya3MgSHVtYW4gSW50ZWxsaWdlbmNlQGluY3JhbnNvbQ==",
+   "added": 1795555748760,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-liftstar-gmbh",
    "title": "Aurora lists Liftstar GmbH",
