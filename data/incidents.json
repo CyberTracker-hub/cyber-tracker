@@ -1,5 +1,5 @@
 {
- "lastRun": 1795605533204,
+ "lastRun": 1795609418183,
  "incidents": [
   {
    "id": "2026-11-25-com-affiliated-hackers-hijack-cl-7a5ea",
@@ -2009,6 +2009,23 @@
    "source": "fraenkischertag.de",
    "url": "https://www.fraenkischertag.de/lokales/bamberg/blaulicht/rathaus-buttenheim-gehackt-was-buerger-wissen-muessen-art-605531",
    "added": 1795596736558,
+   "auto": true
+  },
+  {
+   "id": "2026-11-23-banco-do-nordeste",
+   "title": "Banco do Nordeste adota medidas de segurança para os seus canais digitais",
+   "target": "Banco do Nordeste",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Brazil",
+   "place": "",
+   "lat": -14.2,
+   "lon": -51.9,
+   "ts": 1795392000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "bnb.gov.br",
+   "url": "https://www.bnb.gov.br/web/guest/imprensa/noticias/-/asset_publisher/QGdgGhxvRtMv/content/banco-do-nordeste-adota-medidas-de-segurança-para-os-seus-canais-digitais/44540",
+   "added": 1795609418183,
    "auto": true
   },
   {
