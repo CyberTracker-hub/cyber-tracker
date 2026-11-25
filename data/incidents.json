@@ -1,6 +1,24 @@
 {
- "lastRun": 1795571742764,
+ "lastRun": 1795575374381,
  "incidents": [
+  {
+   "id": "2026-11-24-copperstone-clothing-company-indian-garm",
+   "title": "PixelLeaks lists Copperstone Clothing Company (Indian garment manufacturer/exporter, SQL Server E",
+   "target": "Copperstone Clothing Company (Indian garment manufacturer/exporter, SQL Server E",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "India",
+   "place": "",
+   "lat": 20.6,
+   "lon": 79.0,
+   "ts": 1795559688213,
+   "summary": "Listed by PixelLeaks on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q29wcGVyc3RvbmUgQ2xvdGhpbmcgQ29tcGFueSAoSW5kaWFuIGdhcm1lbnQgbWFudWZhY3R1cmVyL2V4cG9ydGVyLCBTUUwgU2VydmVyIEVSUCBlc3RhdGUpQFBpeGVsTGVha3M=",
+   "added": 1795575374381,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-csg-systems-international",
    "title": "Falcon lists CSG Systems International",
