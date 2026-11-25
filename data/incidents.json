@@ -1,6 +1,24 @@
 {
- "lastRun": 1795579342094,
+ "lastRun": 1795583404179,
  "incidents": [
+  {
+   "id": "2026-11-24-kegler-brown-hill-ritter",
+   "title": "SilentRansomGroup lists Kegler, Brown, Hill & Ritter",
+   "target": "Kegler, Brown, Hill & Ritter",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795564640182,
+   "summary": "Listed by SilentRansomGroup on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/S2VnbGVyLCBCcm93biwgSGlsbCAmIFJpdHRlckBTaWxlbnRSYW5zb21Hcm91cA==",
+   "added": 1795583404179,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-islasnatura",
    "title": "Medusalocker lists Islasnatura",
