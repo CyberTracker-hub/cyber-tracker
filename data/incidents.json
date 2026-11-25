@@ -1,6 +1,24 @@
 {
- "lastRun": 1795629856211,
+ "lastRun": 1795632870320,
  "incidents": [
+  {
+   "id": "2026-11-25-elpro-gmbh",
+   "title": "Aurora lists Elpro GmbH",
+   "target": "Elpro GmbH",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795615311198,
+   "summary": "Listed by Aurora on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RWxwcm8gR21iSEBhdXJvcmE=",
+   "added": 1795632870320,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-latin-america-sees-cyberattacks-7c0a3",
    "title": "Latin America Sees Cyberattacks on Ports, Pipelines & Manufacturing",
