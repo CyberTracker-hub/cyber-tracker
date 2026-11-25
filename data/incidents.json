@@ -1,5 +1,5 @@
 {
- "lastRun": 1795619088999,
+ "lastRun": 1795623112127,
  "incidents": [
   {
    "id": "2026-11-25-latin-america-sees-cyberattacks-7c0a3",
@@ -1109,6 +1109,40 @@
    "source": "bilbaohiria.com",
    "url": "https://bilbaohiria.com/actualidad/ciberataque-quironsalud-ia-correos-pacientes-madrid/",
    "added": 1795614768814,
+   "auto": true
+  },
+  {
+   "id": "2026-11-24-turnitin",
+   "title": "Turnitin discloses cyberattack affecting customer-facing systems",
+   "target": "Turnitin",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "bleepingcomputer.com",
+   "url": "https://www.bleepingcomputer.com/news/security/turnitin-discloses-cyberattack-affecting-customer-facing-systems/",
+   "added": 1795623112127,
+   "auto": true
+  },
+  {
+   "id": "2026-11-24-pro-doma",
+   "title": "Hacke�i zas�hli miliardov� byznys rodiny Ma�incov�ch. Pro-Doma se vr�tila k pap�ru a tu�ce",
+   "target": "Pro-Doma",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Czechia",
+   "place": "",
+   "lat": 49.8,
+   "lon": 15.5,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "byznys.hn.cz",
+   "url": "https://byznys.hn.cz/c1-67964410-hackeri-zasahli-miliardovy-byznys-rodiny-marincovych-pro-doma-se-vratila-k-papiru-a-tuzce",
+   "added": 1795623112127,
    "auto": true
   },
   {
