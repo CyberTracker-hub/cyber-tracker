@@ -1,6 +1,24 @@
 {
- "lastRun": 1795575374381,
+ "lastRun": 1795579342094,
  "incidents": [
+  {
+   "id": "2026-11-24-islasnatura",
+   "title": "Medusalocker lists Islasnatura",
+   "target": "Islasnatura",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Spain",
+   "place": "",
+   "lat": 40.4,
+   "lon": -3.7,
+   "ts": 1795560777504,
+   "summary": "Listed by Medusalocker on its leak site (sector: Agriculture and Food Production). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SXNsYXNuYXR1cmFAbWVkdXNhbG9ja2Vy",
+   "added": 1795579342094,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-24-copperstone-clothing-company-indian-garm",
    "title": "PixelLeaks lists Copperstone Clothing Company (Indian garment manufacturer/exporter, SQL Server E",
