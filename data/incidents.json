@@ -1,5 +1,5 @@
 {
- "lastRun": 1795623112127,
+ "lastRun": 1795627488849,
  "incidents": [
   {
    "id": "2026-11-25-latin-america-sees-cyberattacks-7c0a3",
@@ -34,6 +34,42 @@
    "source": "The Record",
    "url": "https://therecord.media/guadeloupe-ransomware-hospital-cyber",
    "added": 1795614768814,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-jacksonville-university",
+   "title": "Qilin lists Jacksonville University",
+   "target": "Jacksonville University",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795609351952,
+   "summary": "Listed by Qilin on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SmFja3NvbnZpbGxlIFVuaXZlcnNpdHlAcWlsaW4=",
+   "added": 1795627488849,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-bethany-lutheran-college",
+   "title": "Qilin lists Bethany Lutheran College",
+   "target": "Bethany Lutheran College",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795609311457,
+   "summary": "Listed by Qilin on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QmV0aGFueSBMdXRoZXJhbiBDb2xsZWdlQHFpbGlu",
+   "added": 1795627488849,
    "auto": true,
    "timeKnown": true
   },
