@@ -1,6 +1,24 @@
 {
- "lastRun": 1795636637196,
+ "lastRun": 1795640176151,
  "incidents": [
+  {
+   "id": "2026-11-25-company-284",
+   "title": "N0n lists Company #284",
+   "target": "Company #284",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795623795559,
+   "summary": "Listed by N0n on its leak site. Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q29tcGFueSAjMjg0QE4wbg==",
+   "added": 1795640176151,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-plumbs-limited",
    "title": "Aurora lists Plumbs Limited",
