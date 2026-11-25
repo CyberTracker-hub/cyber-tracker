@@ -1,5 +1,5 @@
 {
- "lastRun": 1795601552319,
+ "lastRun": 1795605533204,
  "incidents": [
   {
    "id": "2026-11-25-com-affiliated-hackers-hijack-cl-7a5ea",
@@ -90,6 +90,23 @@
    "added": 1795592893506,
    "auto": true,
    "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-rnz",
+   "title": "RNZ hit by apparent cyber attack",
+   "target": "RNZ",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "New Zealand",
+   "place": "",
+   "lat": -41.5,
+   "lon": 172.5,
+   "ts": 1795564800000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "rnz.co.nz",
+   "url": "https://www.rnz.co.nz/national/programmes/checkpoint/audio/2019061411/rnz-hit-by-apparent-cyber-attack",
+   "added": 1795605533204,
+   "auto": true
   },
   {
    "id": "2026-11-24-kegler-brown-hill-ritter",
@@ -879,6 +896,23 @@
    "source": "english.tupaki.com",
    "url": "https://english.tupaki.com/entertainment/cyber-attack-disrupts-telugu-media-house-1516593",
    "added": 1795532355040,
+   "auto": true
+  },
+  {
+   "id": "2026-11-24-shelby-county",
+   "title": "Shelby County Government in Indiana shuts down servers after suspected cyber incident",
+   "target": "Shelby County",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "dysruptionhub.com",
+   "url": "https://dysruptionhub.com/shelby-county-government-indiana-suspected-cyber-incident/",
+   "added": 1795605533204,
    "auto": true
   },
   {
