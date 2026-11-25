@@ -1,5 +1,5 @@
 {
- "lastRun": 1795592893506,
+ "lastRun": 1795596736558,
  "incidents": [
   {
    "id": "2026-11-25-com-affiliated-hackers-hijack-cl-7a5ea",
@@ -16,6 +16,24 @@
    "source": "The Hacker News",
    "url": "https://thehackernews.com/2026/11/com-affiliated-hackers-hijack-cloud.html",
    "added": 1795592893506,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-alsanet",
+   "title": "Spacebears lists Alsanet",
+   "target": "Alsanet",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "North Macedonia",
+   "place": "",
+   "lat": 41.6,
+   "lon": 21.7,
+   "ts": 1795581896696,
+   "summary": "Listed by Spacebears on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QWxzYW5ldEBzcGFjZWJlYXJz",
+   "added": 1795596736558,
    "auto": true,
    "timeKnown": true
   },
@@ -1940,6 +1958,23 @@
    "source": "jornaleconomico.sapo.pt",
    "url": "https://jornaleconomico.sapo.pt/noticias/adene-sofre-ataque-informatico-e-portal-do-sistema-de-certificacao-energetica-esta-temporariamente-indisponivel/",
    "added": 1795512685550,
+   "auto": true
+  },
+  {
+   "id": "2026-11-23-buttenheim",
+   "title": "Cyberattacke auf Rathaus Buttenheim: Was bisher bekannt ist",
+   "target": "Buttenheim",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795392000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "fraenkischertag.de",
+   "url": "https://www.fraenkischertag.de/lokales/bamberg/blaulicht/rathaus-buttenheim-gehackt-was-buerger-wissen-muessen-art-605531",
+   "added": 1795596736558,
    "auto": true
   },
   {
