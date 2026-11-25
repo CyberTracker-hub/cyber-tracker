@@ -1,6 +1,42 @@
 {
- "lastRun": 1795643827832,
+ "lastRun": 1795647357212,
  "incidents": [
+  {
+   "id": "2026-11-25-hydrocision",
+   "title": "Anubis lists HydroCision",
+   "target": "HydroCision",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795631500176,
+   "summary": "Listed by Anubis on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SHlkcm9DaXNpb25AYW51Ymlz",
+   "added": 1795647357212,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-liverpool-ac-uk",
+   "title": "Scarlettgroup lists liverpool.ac.uk",
+   "target": "liverpool.ac.uk",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United Kingdom",
+   "place": "",
+   "lat": 54.0,
+   "lon": -2.0,
+   "ts": 1795631400358,
+   "summary": "Listed by Scarlettgroup on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/bGl2ZXJwb29sLmFjLnVrQFNjYXJsZXR0Z3JvdXA=",
+   "added": 1795647357212,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-honigman-llp",
    "title": "SilentRansomGroup lists Honigman LLP",
