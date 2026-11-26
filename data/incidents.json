@@ -1,6 +1,24 @@
 {
- "lastRun": 1795673832507,
+ "lastRun": 1795679182850,
  "incidents": [
+  {
+   "id": "2026-11-26-koh-young-technology",
+   "title": "Everest lists Koh Young Technology",
+   "target": "Koh Young Technology",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "South Korea",
+   "place": "",
+   "lat": 36.5,
+   "lon": 127.8,
+   "ts": 1795658792189,
+   "summary": "Listed by Everest on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/S29oIFlvdW5nIFRlY2hub2xvZ3lAZXZlcmVzdA==",
+   "added": 1795679182850,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-restaurant-brands-international-inc",
    "title": "Inception lists Restaurant Brands International, Inc.",
@@ -1647,6 +1665,23 @@
    "source": "byznys.hn.cz",
    "url": "https://byznys.hn.cz/c1-67964410-hackeri-zasahli-miliardovy-byznys-rodiny-marincovych-pro-doma-se-vratila-k-papiru-a-tuzce",
    "added": 1795623112127,
+   "auto": true
+  },
+  {
+   "id": "2026-11-24-planzer",
+   "title": "This site can’t be reached",
+   "target": "Planzer",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Switzerland",
+   "place": "",
+   "lat": 46.8,
+   "lon": 8.2,
+   "ts": 1795478400000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "digitec.ch",
+   "url": "https://www.digitec.ch/de/page/cyberangriff-bei-unserem-lieferpartner-planzer-das-musst-du-wissen-44528",
+   "added": 1795679182850,
    "auto": true
   },
   {
