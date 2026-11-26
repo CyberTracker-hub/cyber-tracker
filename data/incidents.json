@@ -1,5 +1,5 @@
 {
- "lastRun": 1795711237868,
+ "lastRun": 1795714825960,
  "incidents": [
   {
    "id": "2026-11-26-jackson-district-library",
@@ -177,6 +177,23 @@
    "source": "frenchbreaches.com",
    "url": "https://frenchbreaches.com/alertes/cyberattaque-opco-ep-incident-cybersecurite-mwxj8zy3wjnpievi9j",
    "added": 1795707338175,
+   "auto": true
+  },
+  {
+   "id": "2026-11-26-convoy-financial-services-limited-cfs",
+   "title": "Convoy Financial reports cyber incident; no evidence of affected policies or MPF accounts",
+   "target": "Convoy Financial Services Limited (CFS)",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Hong Kong",
+   "place": "",
+   "lat": 22.3,
+   "lon": 114.2,
+   "ts": 1795651200000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "thestandard.com.hk",
+   "url": "https://www.thestandard.com.hk/news/article/349788/Convoy-Financial-reports-cyber-incident-no-evidence-of-affected-policies-or-MPF-accounts",
+   "added": 1795714825960,
    "auto": true
   },
   {
