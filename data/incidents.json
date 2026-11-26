@@ -1,6 +1,24 @@
 {
- "lastRun": 1795694411665,
+ "lastRun": 1795699115020,
  "incidents": [
+  {
+   "id": "2026-11-26-australia-s-flight-centre-data-b-c01f0",
+   "title": "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details",
+   "target": "",
+   "type": "supply",
+   "status": "confirmed",
+   "country": "Australia",
+   "place": "",
+   "lat": -25.3,
+   "lon": 133.8,
+   "ts": 1795693871000,
+   "summary": "Reported by Security Affairs. Open the report for details.",
+   "source": "Security Affairs",
+   "url": "https://securityaffairs.com/204049/data-breach/australias-flight-centre-data-breach-exposes-customer-records-and-passport-details.html",
+   "added": 1795699115020,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-fifa-utsatt-for-hackerangrep-kan-420a3",
    "title": "Fifa utsatt for hackerangrep: – Kan få betydelige konsekvenser",
@@ -34,6 +52,24 @@
    "source": "Help Net Security",
    "url": "https://www.helpnetsecurity.com/2026/11/26/ransomware-recovery-fraud-florida-firm-co-founder-charged/",
    "added": 1795690727354,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-26-indonesia-s-national-passport-database",
+   "title": "HYFLOCK lists Indonesia's national passport database",
+   "target": "Indonesia's national passport database",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Indonesia",
+   "place": "",
+   "lat": -2.5,
+   "lon": 118.0,
+   "ts": 1795683187657,
+   "summary": "Listed by HYFLOCK on its leak site (sector: Government & Defense). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SW5kb25lc2lhJ3MgbmF0aW9uYWwgcGFzc3BvcnQgZGF0YWJhc2VASFlGTE9DSw==",
+   "added": 1795699115020,
    "auto": true,
    "timeKnown": true
   },
