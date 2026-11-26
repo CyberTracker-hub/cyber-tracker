@@ -1,6 +1,24 @@
 {
- "lastRun": 1795647357212,
+ "lastRun": 1795653530927,
  "incidents": [
+  {
+   "id": "2026-11-25-norris-mclaughlin",
+   "title": "SilentRansomGroup lists Norris McLaughlin",
+   "target": "Norris McLaughlin",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795638802635,
+   "summary": "Listed by SilentRansomGroup on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Tm9ycmlzIE1jTGF1Z2hsaW5AU2lsZW50UmFuc29tR3JvdXA=",
+   "added": 1795653530927,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-hydrocision",
    "title": "Anubis lists HydroCision",
