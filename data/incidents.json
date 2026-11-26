@@ -1,6 +1,24 @@
 {
- "lastRun": 1795661904723,
+ "lastRun": 1795665567678,
  "incidents": [
+  {
+   "id": "2026-11-25-tessilopera",
+   "title": "Medusalocker lists Tessilopera",
+   "target": "Tessilopera",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795647815969,
+   "summary": "Listed by Medusalocker on its leak site. Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VGVzc2lsb3BlcmFAbWVkdXNhbG9ja2Vy",
+   "added": 1795665567678,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-reflex-electromechanical-trade-co-ltd-na",
    "title": "PixelLeaks lists Reflex Electromechanical & Trade Co. Ltd. (Nablus pumps and elevators engineerin",
