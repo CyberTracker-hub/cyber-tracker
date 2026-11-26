@@ -1,5 +1,5 @@
 {
- "lastRun": 1795703614466,
+ "lastRun": 1795707338175,
  "incidents": [
   {
    "id": "2026-11-26-australia-s-flight-centre-data-b-c01f0",
@@ -142,6 +142,23 @@
    "source": "telegranducato.it",
    "url": "https://www.telegranducato.it/2026/11/26/attacco-informatico-alla-rete-delladsp/",
    "added": 1795703614466,
+   "auto": true
+  },
+  {
+   "id": "2026-11-26-opco-ep",
+   "title": "Cyberattaque chez Opco EP, l'organisme de formation qui accompagne 442 700 entreprises suspend plusieurs services",
+   "target": "Opco EP",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "France",
+   "place": "",
+   "lat": 46.6,
+   "lon": 2.3,
+   "ts": 1795651200000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "frenchbreaches.com",
+   "url": "https://frenchbreaches.com/alertes/cyberattaque-opco-ep-incident-cybersecurite-mwxj8zy3wjnpievi9j",
+   "added": 1795707338175,
    "auto": true
   },
   {
