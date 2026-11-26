@@ -1,6 +1,24 @@
 {
- "lastRun": 1795669738228,
+ "lastRun": 1795673832507,
  "incidents": [
+  {
+   "id": "2026-11-26-restaurant-brands-international-inc",
+   "title": "Inception lists Restaurant Brands International, Inc.",
+   "target": "Restaurant Brands International, Inc.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Canada",
+   "place": "",
+   "lat": 56.1,
+   "lon": -106.3,
+   "ts": 1795657948011,
+   "summary": "Listed by Inception on its leak site (sector: Hospitality). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/UmVzdGF1cmFudCBCcmFuZHMgSW50ZXJuYXRpb25hbCwgSW5jLkBJbmNlcHRpb24=",
+   "added": 1795673832507,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-golden-state-college-milan-institute",
    "title": "Dark Project lists Golden State College & Milan Institute",
