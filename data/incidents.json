@@ -1,6 +1,24 @@
 {
- "lastRun": 1795686793103,
+ "lastRun": 1795690727354,
  "incidents": [
+  {
+   "id": "2026-11-26-data-recovery-firm-co-founder-ac-9fef0",
+   "title": "Data recovery firm co-founder accused of cashing in on ransomware victims",
+   "target": "",
+   "type": "ransomware",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795687147000,
+   "summary": "Reported by Help Net Security. Open the report for details.",
+   "source": "Help Net Security",
+   "url": "https://www.helpnetsecurity.com/2026/11/26/ransomware-recovery-fraud-florida-firm-co-founder-charged/",
+   "added": 1795690727354,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-koh-young-technology",
    "title": "Everest lists Koh Young Technology",
