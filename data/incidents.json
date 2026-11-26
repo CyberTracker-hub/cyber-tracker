@@ -1,6 +1,24 @@
 {
- "lastRun": 1795729079522,
+ "lastRun": 1795732815970,
  "incidents": [
+  {
+   "id": "2026-11-26-godaddy",
+   "title": "Inception lists GoDaddy",
+   "target": "GoDaddy",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795717321927,
+   "summary": "Listed by Inception on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/R29EYWRkeUBJbmNlcHRpb24=",
+   "added": 1795732815970,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-sweet-darling-sales",
    "title": "Qilin lists Sweet Darling Sales",
