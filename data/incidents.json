@@ -1,6 +1,24 @@
 {
- "lastRun": 1795653530927,
+ "lastRun": 1795658742479,
  "incidents": [
+  {
+   "id": "2026-11-25-new-plymouth-school-district",
+   "title": "Interlock lists New Plymouth School District",
+   "target": "New Plymouth School District",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795639502920,
+   "summary": "Listed by Interlock on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TmV3IFBseW1vdXRoIFNjaG9vbCBEaXN0cmljdEBpbnRlcmxvY2s=",
+   "added": 1795658742479,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-norris-mclaughlin",
    "title": "SilentRansomGroup lists Norris McLaughlin",
