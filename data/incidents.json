@@ -1,6 +1,24 @@
 {
- "lastRun": 1795707338175,
+ "lastRun": 1795711237868,
  "incidents": [
+  {
+   "id": "2026-11-26-jackson-district-library",
+   "title": "Rhysida lists Jackson District Library",
+   "target": "Jackson District Library",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795695677956,
+   "summary": "Listed by Rhysida on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/SmFja3NvbiBEaXN0cmljdCBMaWJyYXJ5QHJoeXNpZGE=",
+   "added": 1795711237868,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-australia-s-flight-centre-data-b-c01f0",
    "title": "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details",
