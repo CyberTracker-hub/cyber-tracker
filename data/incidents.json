@@ -1,6 +1,42 @@
 {
- "lastRun": 1795722628396,
+ "lastRun": 1795725525091,
  "incidents": [
+  {
+   "id": "2026-11-26-sweet-darling-sales",
+   "title": "Qilin lists Sweet Darling Sales",
+   "target": "Sweet Darling Sales",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795710017846,
+   "summary": "Listed by Qilin on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U3dlZXQgRGFybGluZyBTYWxlc0BxaWxpbg==",
+   "added": 1795725525091,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-26-arlberger-bergbahnen-ag",
+   "title": "Aurora lists Arlberger Bergbahnen AG",
+   "target": "Arlberger Bergbahnen AG",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Austria",
+   "place": "",
+   "lat": 47.5,
+   "lon": 14.6,
+   "ts": 1795708538667,
+   "summary": "Listed by Aurora on its leak site (sector: Hospitality). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QXJsYmVyZ2VyIEJlcmdiYWhuZW4gQUdAYXVyb3Jh",
+   "added": 1795725525091,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-paramount",
    "title": "Inception lists Paramount",
