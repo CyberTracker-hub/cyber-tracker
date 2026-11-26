@@ -1,6 +1,24 @@
 {
- "lastRun": 1795665567678,
+ "lastRun": 1795669738228,
  "incidents": [
+  {
+   "id": "2026-11-26-golden-state-college-milan-institute",
+   "title": "Dark Project lists Golden State College & Milan Institute",
+   "target": "Golden State College & Milan Institute",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795654257499,
+   "summary": "Listed by Dark Project on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/R29sZGVuIFN0YXRlIENvbGxlZ2UgJiBNaWxhbiBJbnN0aXR1dGVARGFyayBQcm9qZWN0",
+   "added": 1795669738228,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-25-tessilopera",
    "title": "Medusalocker lists Tessilopera",
