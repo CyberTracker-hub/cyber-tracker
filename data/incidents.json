@@ -1,6 +1,24 @@
 {
- "lastRun": 1795690727354,
+ "lastRun": 1795694411665,
  "incidents": [
+  {
+   "id": "2026-11-26-fifa-utsatt-for-hackerangrep-kan-420a3",
+   "title": "Fifa utsatt for hackerangrep: – Kan få betydelige konsekvenser",
+   "target": "",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Norway",
+   "place": "",
+   "lat": 61.0,
+   "lon": 8.5,
+   "ts": 1795692452000,
+   "summary": "Reported by VG. Open the report for details.",
+   "source": "VG",
+   "url": "https://www.vg.no/sport/i/mMROpv/fifa-utsatt-for-hackerangrep-kan-faa-betydelige-konsekvenser?utm_medium=rss",
+   "added": 1795694411665,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-data-recovery-firm-co-founder-ac-9fef0",
    "title": "Data recovery firm co-founder accused of cashing in on ransomware victims",
