@@ -54,6 +54,23 @@
    "timeKnown": true
   },
   {
+   "id": "2026-11-27-us-air-force-cloud-one",
+   "title": "US Air Force cloud platform Cloud One reportedly breached",
+   "target": "US Air Force Cloud One",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "Arlington, Virginia",
+   "lat": 38.87,
+   "lon": -77.06,
+   "ts": 1795792140000,
+   "timeKnown": true,
+   "summary": "Reuters reports, citing people familiar with the matter, that the intrusion was found during a platform upgrade in the past month. The Air Force has not commented and it is unknown whether data was taken.",
+   "source": "BleepingComputer",
+   "url": "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+   "added": 1795809551639
+  },
+  {
    "id": "2026-11-27-blackstone-consulting",
    "title": "Iah6477 lists blackstone-consulting",
    "target": "blackstone-consulting",
