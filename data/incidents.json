@@ -1,6 +1,24 @@
 {
- "lastRun": 1795774247381,
+ "lastRun": 1795777940721,
  "incidents": [
+  {
+   "id": "2026-11-27-thomas-more-university",
+   "title": "Qilin lists Thomas More University",
+   "target": "Thomas More University",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Belgium",
+   "place": "",
+   "lat": 50.6,
+   "lon": 4.5,
+   "ts": 1795761867409,
+   "summary": "Listed by Qilin on its leak site (sector: Education). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VGhvbWFzIE1vcmUgVW5pdmVyc2l0eUBxaWxpbg==",
+   "added": 1795777940721,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-27-switzerland-confirms-ai-assisted-bdba9",
    "title": "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators",
@@ -72,6 +90,23 @@
    "added": 1795757755088,
    "auto": true,
    "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-department-for-work-and-pensions",
+   "title": "Department for Work and Pensions takes some services offline after 'cyber incident'",
+   "target": "Department for Work and Pensions",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "United Kingdom",
+   "place": "",
+   "lat": 54.0,
+   "lon": -2.0,
+   "ts": 1795737600000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "bbc.com",
+   "url": "https://www.bbc.com/news/articles/c8wy5p6pv2e2o",
+   "added": 1795777940721,
+   "auto": true
   },
   {
    "id": "2026-11-26-eversource",
