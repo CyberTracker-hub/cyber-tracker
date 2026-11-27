@@ -1,6 +1,24 @@
 {
- "lastRun": 1795740187333,
+ "lastRun": 1795745315105,
  "incidents": [
+  {
+   "id": "2026-11-26-fye",
+   "title": "Anubis lists FYE",
+   "target": "FYE",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795728140018,
+   "summary": "Listed by Anubis on its leak site (sector: Retail & E-Commerce). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RllFQGFudWJpcw==",
+   "added": 1795745315105,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-godaddy",
    "title": "Inception lists GoDaddy",
