@@ -1,5 +1,5 @@
 {
- "lastRun": 1795798274777,
+ "lastRun": 1795804668192,
  "incidents": [
   {
    "id": "2026-11-27-japan-s-education-ministry-discl-4a82d",
@@ -16,6 +16,24 @@
    "source": "The Record",
    "url": "https://therecord.media/japan-education-ministry-cyberattack",
    "added": 1795790454714,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-avispl",
+   "title": "Iah6477 lists avispl",
+   "target": "avispl",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795788802305,
+   "summary": "Listed by Iah6477 on its leak site (sector: Technology). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/YXZpc3BsQGlhaDY0Nzc=",
+   "added": 1795804668192,
    "auto": true,
    "timeKnown": true
   },
@@ -786,6 +804,23 @@
    "source": "g1.globo.com",
    "url": "https://g1.globo.com/sp/itapetininga-regiao/noticia/2026/11/27/prefeitura-de-taquarivai-sofre-ataque-cibernetico.ghtml",
    "added": 1795786754716,
+   "auto": true
+  },
+  {
+   "id": "2026-11-26-kmetijske-zadruga-tolmin",
+   "title": "Napad na tolminsko mesarijo: hladilnike nastavili na 100 stopinj, na zaslonu se je pojavil politik",
+   "target": "Kmetijske zadruga Tolmin",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "El Salvador",
+   "place": "",
+   "lat": 13.8,
+   "lon": -88.9,
+   "ts": 1795651200000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "dnevnik.si",
+   "url": "https://www.dnevnik.si/novice/slovenija/kibernetski-napad-na-tolminsko-mesarijo-hladilnike-nastavili-na-100-stopinj-celzija-2843538/",
+   "added": 1795804668192,
    "auto": true
   },
   {
