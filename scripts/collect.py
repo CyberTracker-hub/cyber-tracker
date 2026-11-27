@@ -125,6 +125,88 @@ for _code, (_name, _la, _lo) in C.items():
     ALIASES.setdefault(_name.lower(), _code)
 ALIAS_RE = re.compile(r"(?<![a-z])(" + "|".join(re.escape(k) for k in sorted(ALIASES, key=len, reverse=True)) + r")(?![a-z])")
 
+# Well-known organisations whose headlines rarely name a country: name -> (ISO, city, lat, lon).
+# Companies that mostly appear as the source of a report (Google, Microsoft, Cisco...) are left out on purpose.
+ORGS = {
+ "boston scientific": ("US", "Marlborough, Massachusetts", 42.35, -71.55), "pcloud": ("CH", "Baar", 47.2, 8.53),
+ "us air force": ("US", "Arlington, Virginia", 38.87, -77.06), "u.s. air force": ("US", "Arlington, Virginia", 38.87, -77.06),
+ "pentagon": ("US", "Arlington, Virginia", 38.87, -77.06), "fbi": ("US", "Washington, DC", 38.9, -77.03),
+ "cia": ("US", "Langley, Virginia", 38.95, -77.15), "nasa": ("US", "Washington, DC", 38.88, -77.02),
+ "us treasury": ("US", "Washington, DC", 38.9, -77.03), "treasury department": ("US", "Washington, DC", 38.9, -77.03),
+ "sap": ("DE", "Walldorf", 49.3, 8.64), "oracle": ("US", "Austin, Texas", 30.27, -97.74), "godaddy": ("US", "Tempe, Arizona", 33.43, -111.94),
+ "snowflake": ("US", "Bozeman, Montana", 45.68, -111.04), "okta": ("US", "San Francisco", 37.79, -122.4),
+ "lastpass": ("US", "Boston", 42.36, -71.06), "1password": ("CA", "Toronto", 43.65, -79.38), "dropbox": ("US", "San Francisco", 37.77, -122.39),
+ "twilio": ("US", "San Francisco", 37.79, -122.39), "solarwinds": ("US", "Austin, Texas", 30.25, -97.86), "kaseya": ("US", "Miami", 25.77, -80.19),
+ "coinbase": ("US", "San Francisco", 37.79, -122.4), "binance": ("AE", "Dubai", 25.2, 55.27), "bybit": ("AE", "Dubai", 25.2, 55.27),
+ "kraken": ("US", "Cheyenne, Wyoming", 41.14, -104.82), "robinhood": ("US", "Menlo Park, California", 37.45, -122.18),
+ "paypal": ("US", "San Jose, California", 37.38, -121.92), "visa": ("US", "San Francisco", 37.77, -122.39), "mastercard": ("US", "Purchase, New York", 41.04, -73.71),
+ "jpmorgan": ("US", "New York", 40.76, -73.97), "bank of america": ("US", "Charlotte, North Carolina", 35.23, -80.84),
+ "citigroup": ("US", "New York", 40.72, -74.01), "wells fargo": ("US", "San Francisco", 37.79, -122.4), "goldman sachs": ("US", "New York", 40.71, -74.01),
+ "hsbc": ("GB", "London", 51.5, -0.02), "barclays": ("GB", "London", 51.5, -0.02), "lloyds": ("GB", "London", 51.52, -0.09),
+ "santander": ("ES", "Madrid", 40.4, -3.86), "deutsche bank": ("DE", "Frankfurt", 50.11, 8.67), "bnp paribas": ("FR", "Paris", 48.87, 2.34), "ubs": ("CH", "Zurich", 47.37, 8.54),
+ "unitedhealth": ("US", "Eden Prairie, Minnesota", 44.86, -93.44), "change healthcare": ("US", "Nashville", 36.16, -86.78),
+ "cvs": ("US", "Woonsocket, Rhode Island", 42.0, -71.51), "walgreens": ("US", "Deerfield, Illinois", 42.17, -87.85),
+ "kaiser permanente": ("US", "Oakland, California", 37.8, -122.27), "hca healthcare": ("US", "Nashville", 36.16, -86.78), "ascension": ("US", "St. Louis", 38.63, -90.2),
+ "nhs": ("GB", "London", 51.5, -0.12), "boeing": ("US", "Arlington, Virginia", 38.88, -77.1), "airbus": ("FR", "Toulouse", 43.6, 1.44),
+ "lockheed martin": ("US", "Bethesda, Maryland", 38.98, -77.1), "tesla": ("US", "Austin, Texas", 30.22, -97.62), "ford": ("US", "Dearborn, Michigan", 42.32, -83.18),
+ "general motors": ("US", "Detroit", 42.33, -83.05), "volkswagen": ("DE", "Wolfsburg", 52.42, 10.79), "bmw": ("DE", "Munich", 48.18, 11.56),
+ "mercedes-benz": ("DE", "Stuttgart", 48.78, 9.18), "stellantis": ("NL", "Hoofddorp", 52.3, 4.69), "renault": ("FR", "Boulogne-Billancourt", 48.83, 2.24),
+ "volvo": ("SE", "Gothenburg", 57.71, 11.97), "jaguar land rover": ("GB", "Coventry", 52.41, -1.51), "toyota": ("JP", "Toyota City", 35.08, 137.16),
+ "honda": ("JP", "Tokyo", 35.67, 139.72), "nissan": ("JP", "Yokohama", 35.46, 139.63), "hyundai": ("KR", "Seoul", 37.46, 127.04), "kia": ("KR", "Seoul", 37.46, 127.04),
+ "sony": ("JP", "Tokyo", 35.63, 139.74), "panasonic": ("JP", "Osaka", 34.74, 135.57), "hitachi": ("JP", "Tokyo", 35.68, 139.76), "nintendo": ("JP", "Kyoto", 34.97, 135.76),
+ "sega": ("JP", "Tokyo", 35.63, 139.72), "rakuten": ("JP", "Tokyo", 35.61, 139.63), "softbank": ("JP", "Tokyo", 35.66, 139.76), "ntt": ("JP", "Tokyo", 35.68, 139.76), "kddi": ("JP", "Tokyo", 35.7, 139.75),
+ "samsung": ("KR", "Suwon", 37.26, 127.05), "lg": ("KR", "Seoul", 37.53, 126.93), "sk telecom": ("KR", "Seoul", 37.57, 126.98), "coupang": ("KR", "Seoul", 37.52, 127.1),
+ "tsmc": ("TW", "Hsinchu", 24.8, 120.97), "foxconn": ("TW", "New Taipei", 25.0, 121.45), "nvidia": ("US", "Santa Clara, California", 37.37, -121.96),
+ "intel": ("US", "Santa Clara, California", 37.39, -121.96), "qualcomm": ("US", "San Diego", 32.9, -117.2),
+ "at&t": ("US", "Dallas", 32.78, -96.8), "verizon": ("US", "New York", 40.75, -73.98), "t-mobile": ("US", "Bellevue, Washington", 47.58, -122.17), "comcast": ("US", "Philadelphia", 39.95, -75.17),
+ "disney": ("US", "Burbank, California", 34.16, -118.33), "ticketmaster": ("US", "Beverly Hills, California", 34.07, -118.4), "live nation": ("US", "Beverly Hills, California", 34.07, -118.4),
+ "netflix": ("US", "Los Gatos, California", 37.26, -121.96), "spotify": ("SE", "Stockholm", 59.33, 18.06), "tiktok": ("SG", "Singapore", 1.28, 103.85),
+ "electronic arts": ("US", "Redwood City, California", 37.52, -122.25), "ubisoft": ("FR", "Saint-Mandé", 48.84, 2.42), "rockstar games": ("US", "New York", 40.72, -74.0),
+ "uber": ("US", "San Francisco", 37.77, -122.39), "airbnb": ("US", "San Francisco", 37.77, -122.4), "booking.com": ("NL", "Amsterdam", 52.38, 4.9), "expedia": ("US", "Seattle", 47.63, -122.37),
+ "marriott": ("US", "Bethesda, Maryland", 38.98, -77.09), "hilton": ("US", "McLean, Virginia", 38.93, -77.21), "mgm resorts": ("US", "Las Vegas", 36.1, -115.17), "caesars": ("US", "Reno, Nevada", 39.53, -119.81),
+ "nike": ("US", "Beaverton, Oregon", 45.51, -122.83), "adidas": ("DE", "Herzogenaurach", 49.57, 10.88), "h&m": ("SE", "Stockholm", 59.33, 18.06), "ikea": ("NL", "Delft", 52.01, 4.36),
+ "walmart": ("US", "Bentonville, Arkansas", 36.37, -94.21), "costco": ("US", "Issaquah, Washington", 47.55, -122.05), "mcdonald's": ("US", "Chicago", 41.88, -87.65),
+ "marks & spencer": ("GB", "London", 51.52, -0.18), "harrods": ("GB", "London", 51.5, -0.16), "co-op": ("GB", "Manchester", 53.49, -2.24), "tesco": ("GB", "Welwyn Garden City", 51.8, -0.2),
+ "british airways": ("GB", "London", 51.47, -0.45), "royal mail": ("GB", "London", 51.52, -0.11), "british library": ("GB", "London", 51.53, -0.13),
+ "transport for london": ("GB", "London", 51.5, -0.1), "capita": ("GB", "London", 51.52, -0.09), "vodafone": ("GB", "Newbury", 51.4, -1.32),
+ "orange": ("FR", "Paris", 48.83, 2.27), "afp": ("FR", "Paris", 48.87, 2.34), "air france": ("FR", "Paris", 49.0, 2.55), "lufthansa": ("DE", "Cologne", 50.94, 6.96),
+ "deutsche telekom": ("DE", "Bonn", 50.71, 7.13), "siemens": ("DE", "Munich", 48.14, 11.58), "telefónica": ("ES", "Madrid", 40.51, -3.66), "telefonica": ("ES", "Madrid", 40.51, -3.66),
+ "swisscom": ("CH", "Bern", 46.95, 7.44), "fifa": ("CH", "Zurich", 47.38, 8.57), "uefa": ("CH", "Nyon", 46.37, 6.23), "nestlé": ("CH", "Vevey", 46.47, 6.84),
+ "maersk": ("DK", "Copenhagen", 55.69, 12.6), "novo nordisk": ("DK", "Bagsværd", 55.76, 12.45), "vestas": ("DK", "Aarhus", 56.2, 10.17),
+ "equinor": ("NO", "Stavanger", 58.97, 5.73), "norsk hydro": ("NO", "Oslo", 59.92, 10.68), "telenor": ("NO", "Fornebu", 59.9, 10.63), "dnb": ("NO", "Oslo", 59.91, 10.76),
+ "stortinget": ("NO", "Oslo", 59.91, 10.74), "helse sør-øst": ("NO", "Hamar", 60.79, 11.07), "nortura": ("NO", "Oslo", 59.93, 10.83), "tietoevry": ("FI", "Espoo", 60.18, 24.83),
+ "sas": ("SE", "Stockholm", 59.65, 17.93), "ericsson": ("SE", "Stockholm", 59.4, 17.95), "finnair": ("FI", "Vantaa", 60.31, 24.96), "nokia": ("FI", "Espoo", 60.22, 24.76),
+ "ryanair": ("IE", "Dublin", 53.42, -6.24), "qantas": ("AU", "Sydney", -33.93, 151.19), "optus": ("AU", "Sydney", -33.78, 151.12), "medibank": ("AU", "Melbourne", -37.82, 144.95),
+ "telstra": ("AU", "Melbourne", -37.81, 144.97), "air india": ("IN", "Gurugram", 28.46, 77.03), "tata": ("IN", "Mumbai", 18.93, 72.83), "infosys": ("IN", "Bengaluru", 12.85, 77.66),
+ "petrobras": ("BR", "Rio de Janeiro", -22.91, -43.18), "mercado libre": ("AR", "Buenos Aires", -34.55, -58.46), "rogers": ("CA", "Toronto", 43.67, -79.38),
+ "delta air lines": ("US", "Atlanta", 33.65, -84.42), "american airlines": ("US", "Fort Worth, Texas", 32.83, -97.05), "united airlines": ("US", "Chicago", 41.88, -87.64),
+ "fedex": ("US", "Memphis", 35.12, -89.97), "ups": ("US", "Atlanta", 33.94, -84.36), "dhl": ("DE", "Bonn", 50.72, 7.13), "usa today": ("US", "New York", 40.76, -73.98),
+ "shell": ("GB", "London", 51.5, -0.12), "bp": ("GB", "London", 51.51, -0.14), "exxonmobil": ("US", "Spring, Texas", 30.1, -95.44), "chevron": ("US", "Houston", 29.76, -95.37),
+}
+ORG_RE = re.compile(r"(?<![a-z0-9])(" + "|".join(re.escape(k) for k in sorted(ORGS, key=len, reverse=True)) + r")(?![a-z0-9])")
+ORG_CASE = {"sap": "SAP", "fbi": "FBI", "cia": "CIA", "nasa": "NASA", "nhs": "NHS", "afp": "AFP", "fifa": "FIFA", "uefa": "UEFA", "hsbc": "HSBC", "ubs": "UBS", "bmw": "BMW",
+            "ntt": "NTT", "kddi": "KDDI", "lg": "LG", "tsmc": "TSMC", "at&t": "AT&T", "ikea": "IKEA", "h&m": "H&M", "dnb": "DNB", "sas": "SAS", "ups": "UPS", "dhl": "DHL",
+            "bp": "BP", "cvs": "CVS", "pcloud": "pCloud", "godaddy": "GoDaddy", "paypal": "PayPal", "tiktok": "TikTok", "jpmorgan": "JPMorgan", "us air force": "US Air Force",
+            "u.s. air force": "US Air Force", "us treasury": "US Treasury", "usa today": "USA Today", "1password": "1Password", "lastpass": "LastPass", "solarwinds": "SolarWinds",
+            "unitedhealth": "UnitedHealth", "mcdonald's": "McDonald's", "tietoevry": "Tietoevry", "exxonmobil": "ExxonMobil", "fedex": "FedEx"}
+
+
+def find_org(title):
+    """A known organisation named in the headline, as (display name, ISO, city, lat, lon), or None."""
+    # short all-caps names must match case-sensitively so "sap", "ups" or "visa" in running text do not trigger
+    t = str(title or "")
+    m = ORG_RE.search(t.lower())
+    if not m:
+        return None
+    key = m.group(1)
+    shown = t[m.start():m.end()]
+    if len(key) <= 4 and not shown.isupper() and key not in ("nike", "sony", "sega", "ford", "uber", "visa", "tata", "kia", "intel"):
+        return None
+    if key in ("visa", "ford", "orange", "shell", "intel", "rogers", "disney", "oracle", "hilton", "ascension") and not shown[:1].isupper():
+        return None
+    code, city, lat, lon = ORGS[key]
+    return (ORG_CASE.get(key, key.title()), code, city, lat, lon)
+
 FEEDS = [  # (source name, url, default country when the text names none)
     ("BleepingComputer", "https://www.bleepingcomputer.com/feed/", None),
     ("The Record", "https://therecord.media/feed", None),
@@ -231,10 +313,14 @@ def pretty_group(g):
     return g if any(ch.isupper() for ch in g) else g.title()
 
 
-def incident(iid, title, target, typ, status, code, ts, summary, source, url, now, time_known):
+def incident(iid, title, target, typ, status, code, ts, summary, source, url, now, time_known, org=None):
     name, lat, lon = C[code]
+    place = ""
+    if org:  # a known organisation: use its home city instead of the country centre
+        target = target or org[0]
+        name, place, lat, lon = C[org[1]][0], org[2], org[3], org[4]
     d = {"id": iid, "title": title[:140], "target": target[:80], "type": typ, "status": status,
-         "country": name, "place": "", "lat": lat, "lon": lon, "ts": ts, "summary": summary[:400],
+         "country": name, "place": place, "lat": lat, "lon": lon, "ts": ts, "summary": summary[:400],
          "source": source, "url": url, "added": now, "auto": True}
     if time_known:
         d["timeKnown"] = True
@@ -327,13 +413,14 @@ def from_feed(name, url, default_code, now):
             continue
         if not ATTACK_RE.search(title) or SKIP_RE.search(title):
             continue
-        code = find_country(title, desc) or default_code
+        org = find_org(title)
+        code = (org[1] if org else None) or find_country(title, desc) or default_code
         if not code:
             continue
         day = datetime.fromtimestamp(ts / 1000, timezone.utc).strftime("%Y-%m-%d")
         iid = "%s-%s-%s" % (day, slug(title, 32), hashlib.sha1(link.encode()).hexdigest()[:5])
         out.append(incident(iid, title, "", classify(title + " " + desc), "confirmed", code, ts,
-                            "Reported by %s. Open the report for details." % name, name, link, now, True))
+                            "Reported by %s. Open the report for details." % name, name, link, now, True, org=org))
     return out
 
 
