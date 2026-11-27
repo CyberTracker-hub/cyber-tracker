@@ -1,5 +1,5 @@
 {
- "lastRun": 1795809699278,
+ "lastRun": 1795811967091,
  "incidents": [
   {
    "id": "2026-11-27-pcloud-pass",
@@ -34,6 +34,24 @@
    "source": "BleepingComputer",
    "url": "https://www.bleepingcomputer.com/news/security/new-boston-scientific-data-breach-exposes-personal-medical-info/",
    "added": 1795809539606
+  },
+  {
+   "id": "2026-11-27-brit-ltd-brit-insurance-britinsurance-co",
+   "title": "Incransom lists Brit Ltd / Brit Insurance (britinsurance.com)",
+   "target": "Brit Ltd / Brit Insurance (britinsurance.com)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United Kingdom",
+   "place": "",
+   "lat": 54.0,
+   "lon": -2.0,
+   "ts": 1795795845427,
+   "summary": "Listed by Incransom on its leak site (sector: Financial Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/QnJpdCBMdGQgLyBCcml0IEluc3VyYW5jZSAoYnJpdGluc3VyYW5jZS5jb20pQGluY3JhbnNvbQ==",
+   "added": 1795811967091,
+   "auto": true,
+   "timeKnown": true
   },
   {
    "id": "2026-11-27-rogers-group",
