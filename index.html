@@ -533,8 +533,7 @@ body.panel-open .hint { display: none; }
   function setStatus(kind, text) { $("status").className = "status " + kind; $("statusText").textContent = text; }
   function renderStatus() {
     if (!connected) return;
-    var d = lastRun && new Date(lastRun);
-    setStatus("live", "LIVE" + (d ? " · sources checked " + d.getDate() + " " + MON[d.getMonth()] + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()) : " · connected"));
+    setStatus("live", "LIVE");
   }
 
   function select(id) {
