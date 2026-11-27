@@ -1,5 +1,5 @@
 {
- "lastRun": 1795761306677,
+ "lastRun": 1795766335273,
  "incidents": [
   {
    "id": "2026-11-27-switzerland-confirms-ai-assisted-bdba9",
@@ -16,6 +16,24 @@
    "source": "The Hacker News",
    "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
    "added": 1795761306677,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-sternklinik-medi-z-bremen-gmbh",
+   "title": "Spacebears lists SternKlinik (medi-z Bremen GmbH)",
+   "target": "SternKlinik (medi-z Bremen GmbH)",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Germany",
+   "place": "",
+   "lat": 51.1,
+   "lon": 10.4,
+   "ts": 1795751484060,
+   "summary": "Listed by Spacebears on its leak site (sector: Healthcare). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U3Rlcm5LbGluaWsgKG1lZGkteiBCcmVtZW4gR21iSClAc3BhY2ViZWFycw==",
+   "added": 1795766335273,
    "auto": true,
    "timeKnown": true
   },
