@@ -57,6 +57,11 @@ a { color: var(--accent); }
 .status .lamp { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
 .status.live .lamp { background: #5fe08c; box-shadow: 0 0 0 4px rgba(95,224,140,.18); }
 .status.warn .lamp { background: var(--accent); }
+.ca { background: transparent; border: 1px dashed var(--line); border-radius: 7px; padding: 3px 9px; margin-left: 6px; font-family: var(--f-mono); font-size: 12px; color: var(--ink); cursor: pointer; white-space: nowrap; }
+.ca b { color: var(--accent); font-weight: 500; }
+.ca:hover { border-color: var(--accent); }
+.ca .short { display: none; }
+@media (max-width: 1280px) { .ca .full { display: none; } .ca .short { display: inline; } }
 .menu { margin-left: auto; display: flex; gap: 4px; }
 .menu button {
   background: transparent; border: 1px solid transparent; border-radius: 8px;
@@ -166,7 +171,7 @@ body.panel-open .hint { display: none; }
 
 <header class="bar glass">
   <h1 class="brand">Cyber <span>Tracker</span></h1>
-  <div class="status" id="status" role="status"><span class="lamp"></span><span id="statusText">Connecting …</span></div>
+  <div class="status" id="status" role="status"><span class="lamp"></span><span id="statusText">Connecting …</span><button type="button" class="ca" id="ca" data-ca="AUMP1VC2Th654LFA5yUW56cnz5hgK5Ea2tVpvSQ3pump" title="Copy contract address" aria-label="Copy contract address AUMP1VC2Th654LFA5yUW56cnz5hgK5Ea2tVpvSQ3pump"><b>CA:</b> <span class="full">AUMP1VC2Th654LFA5yUW56cnz5hgK5Ea2tVpvSQ3pump</span><span class="short">AUMP1V…Q3pump</span></button></div>
   <nav class="menu" aria-label="Panels">
     <button type="button" data-p="feed" aria-expanded="false" aria-controls="panel">Feed<span class="n" id="navCount"></span></button>
     <button type="button" data-p="filters" aria-expanded="false" aria-controls="panel">Filters</button>
@@ -544,6 +549,11 @@ body.panel-open .hint { display: none; }
     var b = selected && $("it-" + selected);
     if (b && openPanel === "feed") b.scrollIntoView({ block: "nearest" });
   }
+  $("ca").addEventListener("click", function () {
+    var b = $("ca"), addr = b.getAttribute("data-ca"), old = b.innerHTML;
+    function done(ok) { b.textContent = ok ? "Copied" : addr; setTimeout(function () { b.innerHTML = old; }, ok ? 1200 : 6000); }
+    try { navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
+  });
   $("cClose").addEventListener("click", function () { selected = null; renderFeed(); renderCard(); });
 
   // ---------- panels ----------
