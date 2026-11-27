@@ -1,6 +1,24 @@
 {
- "lastRun": 1795757755088,
+ "lastRun": 1795761306677,
  "incidents": [
+  {
+   "id": "2026-11-27-switzerland-confirms-ai-assisted-bdba9",
+   "title": "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Switzerland",
+   "place": "",
+   "lat": 46.8,
+   "lon": 8.2,
+   "ts": 1795759460000,
+   "summary": "Reported by The Hacker News. Open the report for details.",
+   "source": "The Hacker News",
+   "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+   "added": 1795761306677,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-27-wolters-kluwer",
    "title": "Direwolf lists Wolters Kluwer",
