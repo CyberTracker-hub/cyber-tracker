@@ -1,5 +1,5 @@
 {
- "lastRun": 1795790454714,
+ "lastRun": 1795794275869,
  "incidents": [
   {
    "id": "2026-11-27-japan-s-education-ministry-discl-4a82d",
@@ -52,6 +52,24 @@
    "source": "Digi.no",
    "url": "https://www.digi.no/sikkerhet/reuters-usas-luftforsvars-skytjeneste-hacket/7189491",
    "added": 1795781829309,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-vc-erp-consulting-pvt-ltd",
+   "title": "Rhysida lists VC ERP Consulting Pvt. Ltd.",
+   "target": "VC ERP Consulting Pvt. Ltd.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "India",
+   "place": "",
+   "lat": 20.6,
+   "lon": 79.0,
+   "ts": 1795779172949,
+   "summary": "Listed by Rhysida on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/VkMgRVJQIENvbnN1bHRpbmcgUHZ0LiBMdGQuQHJoeXNpZGE=",
+   "added": 1795794275869,
    "auto": true,
    "timeKnown": true
   },
