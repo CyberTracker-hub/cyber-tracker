@@ -456,6 +456,14 @@ def main():
             tg = str(o.get("target") or "").lower().strip()
             if len(tg) >= 5 and re.search(r"(?<![a-z0-9])" + re.escape(tg) + r"(?![a-z0-9])", t):
                 return True
+        # the same well-known organisation was already reported in the last three days
+        org = find_org(inc["title"])
+        if org:
+            for o in incidents:
+                if abs(o.get("ts", 0) - inc["ts"]) < 3 * 86400000:
+                    oo = find_org(o.get("title", "")) or find_org(o.get("target", ""))
+                    if oo and oo[0] == org[0]:
+                        return True
         # several outlets often report one incident: same country, within two days, three shared words
         w = words(inc["title"])
         for o in incidents:
