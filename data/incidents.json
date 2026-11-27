@@ -1,5 +1,5 @@
 {
- "lastRun": 1795808720640,
+ "lastRun": 1795809699278,
  "incidents": [
   {
    "id": "2026-11-27-pcloud-pass",
@@ -229,6 +229,24 @@
    "source": "Ransomware.live",
    "url": "https://www.ransomware.live/id/cHJlZ2lzQGlhaDY0Nzc=",
    "added": 1795786754716,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-sap-confirms-cyberattack-source-62ce0",
+   "title": "SAP Confirms Cyberattack, Source Code Reportedly Compromised",
+   "target": "SAP",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Germany",
+   "place": "Walldorf",
+   "lat": 49.3,
+   "lon": 8.64,
+   "ts": 1795764974000,
+   "summary": "Reported by SecurityWeek. Open the report for details.",
+   "source": "SecurityWeek",
+   "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/",
+   "added": 1795809699278,
    "auto": true,
    "timeKnown": true
   },
@@ -804,6 +822,24 @@
    "source": "Ransomware.live",
    "url": "https://www.ransomware.live/id/SW5kb25lc2lhJ3MgbmF0aW9uYWwgcGFzc3BvcnQgZGF0YWJhc2VASFlGTE9DSw==",
    "added": 1795699115020,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-26-1password-breach-exposes-custome-84ce0",
+   "title": "1Password Breach Exposes Customer Data, Internal Source Code",
+   "target": "1Password",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Canada",
+   "place": "Toronto",
+   "lat": 43.65,
+   "lon": -79.38,
+   "ts": 1795681930000,
+   "summary": "Reported by SecurityWeek. Open the report for details.",
+   "source": "SecurityWeek",
+   "url": "https://www.securityweek.com/1password-breach-exposes-customer-data-internal-source-code/",
+   "added": 1795809699278,
    "auto": true,
    "timeKnown": true
   },
@@ -1447,6 +1483,24 @@
    "source": "Ransomware.live",
    "url": "https://www.ransomware.live/id/QmV0aGFueSBMdXRoZXJhbiBDb2xsZWdlQHFpbGlu",
    "added": 1795627488849,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-25-us-treasury-investigates-cyber-i-2b3b0",
+   "title": "US Treasury Investigates Cyber Incident Amid Reported Federal Agency Breaches",
+   "target": "US Treasury",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "United States",
+   "place": "Washington, DC",
+   "lat": 38.9,
+   "lon": -77.03,
+   "ts": 1795607100000,
+   "summary": "Reported by Infosecurity Magazine. Open the report for details.",
+   "source": "Infosecurity Magazine",
+   "url": "https://www.infosecurity-magazine.com/news/us-treasury-cyber-incident/",
+   "added": 1795809699278,
    "auto": true,
    "timeKnown": true
   },
