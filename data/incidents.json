@@ -1,6 +1,24 @@
 {
- "lastRun": 1795786754716,
+ "lastRun": 1795790454714,
  "incidents": [
+  {
+   "id": "2026-11-27-japan-s-education-ministry-discl-4a82d",
+   "title": "Japan’s education ministry discloses breach of government procurement system",
+   "target": "",
+   "type": "breach",
+   "status": "confirmed",
+   "country": "Japan",
+   "place": "",
+   "lat": 36.2,
+   "lon": 138.3,
+   "ts": 1795788900000,
+   "summary": "Reported by The Record. Open the report for details.",
+   "source": "The Record",
+   "url": "https://therecord.media/japan-education-ministry-cyberattack",
+   "added": 1795790454714,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-27-software-giant-sap-confirms-cybe-9a79f",
    "title": "Software giant SAP confirms cyber incident amid reports of source code breach",
