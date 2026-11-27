@@ -1,6 +1,42 @@
 {
- "lastRun": 1795753893417,
+ "lastRun": 1795757755088,
  "incidents": [
+  {
+   "id": "2026-11-27-wolters-kluwer",
+   "title": "Direwolf lists Wolters Kluwer",
+   "target": "Wolters Kluwer",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Netherlands",
+   "place": "",
+   "lat": 52.2,
+   "lon": 5.3,
+   "ts": 1795741366848,
+   "summary": "Listed by Direwolf on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/V29sdGVycyBLbHV3ZXJAZGlyZXdvbGY=",
+   "added": 1795757755088,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-27-elektro-ruppen",
+   "title": "Bravox lists Elektro-Ruppen",
+   "target": "Elektro-Ruppen",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Switzerland",
+   "place": "",
+   "lat": 46.8,
+   "lon": 8.2,
+   "ts": 1795741107884,
+   "summary": "Listed by Bravox on its leak site (sector: Energy & Utilities). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/RWxla3Ryby1SdXBwZW5AYnJhdm94",
+   "added": 1795757755088,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-26-eversource",
    "title": "Whitearmor lists Eversource",
