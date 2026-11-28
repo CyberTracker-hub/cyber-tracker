@@ -1,6 +1,41 @@
 {
- "lastRun": 1795868580229,
+ "lastRun": 1795873145615,
  "incidents": [
+  {
+   "id": "2026-11-28-multotec",
+   "title": "Rhysida lists Multotec",
+   "target": "Multotec",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "South Africa",
+   "place": "",
+   "lat": -30.6,
+   "lon": 22.9,
+   "ts": 1795855299008,
+   "summary": "Listed by Rhysida on its leak site (sector: Manufacturing). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/TXVsdG90ZWNAcmh5c2lkYQ==",
+   "added": 1795873145615,
+   "auto": true,
+   "timeKnown": true
+  },
+  {
+   "id": "2026-11-28-3tecnos-tecnologia",
+   "title": "Jornal Sergipe Verdade on Instagram: \"Prefeituras de Sergipe enfrentaram dificuldades para fechar a folha de pagamento de novembro depois qu",
+   "target": "3Tecnos Tecnologia",
+   "type": "intrusion",
+   "status": "confirmed",
+   "country": "Brazil",
+   "place": "",
+   "lat": -14.2,
+   "lon": -51.9,
+   "ts": 1795824000000,
+   "summary": "Reported in the press as a cyberattack. Open the report for details.",
+   "source": "instagram.com",
+   "url": "https://www.instagram.com/reel/DgSLWYgON5y/",
+   "added": 1795873145615,
+   "auto": true
+  },
   {
    "id": "2026-11-27-samlut-and-company-p-a",
    "title": "Incransom lists Samlut and Company, P.A.",
