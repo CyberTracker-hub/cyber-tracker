@@ -1,6 +1,24 @@
 {
- "lastRun": 1795831443163,
+ "lastRun": 1795838188929,
  "incidents": [
+  {
+   "id": "2026-11-27-samlut-and-company-p-a",
+   "title": "Incransom lists Samlut and Company, P.A.",
+   "target": "Samlut and Company, P.A.",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "United States",
+   "place": "",
+   "lat": 39.5,
+   "lon": -98.4,
+   "ts": 1795820419875,
+   "summary": "Listed by Incransom on its leak site (sector: Professional Services). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/U2FtbHV0IGFuZCBDb21wYW55LCBQLkEuQGluY3JhbnNvbQ==",
+   "added": 1795838188929,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-27-cinelandia-s-p-a",
    "title": "Incransom lists Cinelandia S.p.A",
