@@ -1,6 +1,24 @@
 {
- "lastRun": 1795826344234,
+ "lastRun": 1795831443163,
  "incidents": [
+  {
+   "id": "2026-11-27-cinelandia-s-p-a",
+   "title": "Incransom lists Cinelandia S.p.A",
+   "target": "Cinelandia S.p.A",
+   "type": "ransomware",
+   "status": "claimed",
+   "country": "Italy",
+   "place": "",
+   "lat": 42.8,
+   "lon": 12.6,
+   "ts": 1795815969068,
+   "summary": "Listed by Incransom on its leak site (sector: Hospitality). Not confirmed by the organisation.",
+   "source": "Ransomware.live",
+   "url": "https://www.ransomware.live/id/Q2luZWxhbmRpYSBTLnAuQUBpbmNyYW5zb20=",
+   "added": 1795831443163,
+   "auto": true,
+   "timeKnown": true
+  },
   {
    "id": "2026-11-27-pcloud-pass",
    "title": "pCloud confirms cyberattack on its password manager pCloud Pass",
